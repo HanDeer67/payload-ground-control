@@ -107,14 +107,24 @@ satellitePayloadGroundControl/frameFormat/lua/
 ```
 satellitePayloadGroundControl/
 │
-├── communication/
-├── frameFormat/
-│   └── lua/
-├── image/
-├── ui/
-├── resources/
-├── main.cpp
-└── *.pro
+├── satellitePayloadGroundControl.pro   # Main Qt project file
+│
+├── CANFrame/            # CAN protocol frame handling
+├── ZLGCAN/              # ZLG CAN device interface
+├── serialPortModule/    # UART communication module
+│
+├── frameFormat/         # Generic frame parsing engine
+├── frameFormatCamera/   # Camera frame processing
+│
+├── cardModule/          # Payload board interaction module
+├── GeneralTools/        # Utility and common tools
+├── UICustom/            # Custom UI components
+├── XML/                 # XML configuration handling
+│
+├── Headers/             # Global headers
+├── Sources/             # Main source files
+├── Forms/               # Qt UI forms (.ui)
+└── Resources/           # Qt resource files (.qrc)
 ```
 
 ---
@@ -123,16 +133,11 @@ satellitePayloadGroundControl/
 
 ### Using Qt Creator
 
-1. Open `.pro` file
-2. Select Qt 5.12.3 (MSVC 2017 32-bit)
-3. Build and run
+1. Open the .pro file in Qt Creator
+2. Select Qt 5.12.3 (MSVC 2017 32-bit Kit)
+3. Configure build settings
+4. Build and run
 
-### Command Line
-
-```
-qmake
-nmake
-```
 
 ---
 
@@ -144,7 +149,14 @@ nmake
 
 ---
 
+## 👤 Author
+XuXiaohan​
+Email: iridescenthan@gmail.com
+
+---
+
 ## 📄 License
 
 This project is intended for technical demonstration purposes.
-All rights reserved.
+Copyright © 2026 XuXiaohan.  
+All rights reserved.  
