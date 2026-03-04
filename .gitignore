@@ -1,0 +1,3 @@
+satellitePayloadGroundControl/frameFormat/lua/lua-5.4.*_lib/
+satellitePayloadGroundControl/frameFormat/lua/liblua54.a
+build-*/
