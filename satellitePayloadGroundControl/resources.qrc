@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>QssFiles/mainQss.qss</file>
+        <file>Icon/goomba_super_mario_bros_icon_232943.png</file>
+        <file>Icon/settings-setup-set-gear-mechanic_108604.png</file>
+        <file>Icon/3592835-general-hierachy-map-office-site-structure_107768.png</file>
+        <file>Icon/3592837-camera-image-photo-photography-shot_107774.png</file>
+        <file>Icon/3592864-general-graph-increase-office-rise-statistics-success_107790.png</file>
+        <file>Icon/3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.png</file>
+        <file>Icon/game_hat_mario_retro_super_video_icon_183171.png</file>
+        <file>Icon/3592866-attach-attachment-clip-clipping-general-office-paperclip_107732.png</file>
+        <file>Icon/checked_resized.png</file>
+        <file>Icon/3592824-airplane-airplane-mode-general-office-plane-transport-travel_107771.png</file>
+    </qresource>
+</RCC>

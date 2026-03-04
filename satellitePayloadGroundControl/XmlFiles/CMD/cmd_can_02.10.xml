@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="gb2312"?>
+<SYSTEM SYSTEMAttributeNumD="08" SYSTEMSpecificationT="指令模板" XMLtypeT="指令模板" SYSTEMCommandNumD="32" SYSTEMCommandByteLenD="255" SingleFrameCodeH="NC" ComplexFrameCodeH="NC" ScheCmdVectorCodeH = "NC" >
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="0" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2236" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 开关指令 22-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="1" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2239" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 开关指令 22-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="2" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2290" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 开关指令 22-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="3" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2263" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="4" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2266" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="5" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2269" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="6" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2260" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="7" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "226C" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="8" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2293" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="9" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2296" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="10" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "229C" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="11" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1" paraCode = "2299" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="指令子选项" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="12" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="6" CommandParamByteLenH="1" CommandByteLenH="12" paraCode = "2622" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="1" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="2" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="3" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="4" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="5" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+	</Command>
+
+	<Command CommandAttributeNumD="14" CommandSeqIdxD="13" CommandSpecificationT="指令名称" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="6" CommandParamByteLenH="1" CommandByteLenH="12" paraCode = "2624" FrameHeader = "" FrameTail = "" CheckSumLength = "1">
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="1" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="2" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="3" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="4" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="5" CommandParaSpecificationT="指令子选项" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-179.99" CommandParaMaxF="179.99">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="指令子选项(单位：度)"  ParaInitCode="90" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+	</Command>
+
+	
+
+</SYSTEM>

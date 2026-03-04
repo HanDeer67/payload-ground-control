@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="gb2312"?>
+<SYSTEM SYSTEMSpecificationT="遥测文件名称2" XMLtypeT="遥测模板">
+
+	<TM FrameHeader = "0012" FrameTail = "" CheckSumLength = "1" FrameLength = "245"> 
+
+		<TMitem TMitemNoName="THA001" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA002" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0"  TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA003" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0"  TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA004" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0"  TMsignedType="0" TMitemMinF  ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA005" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF  ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA006" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA007" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA008" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA009" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		
+		<!--注意：下面四个参数共用一个字节-->
+		<TMitem TMitemNoName="THA010" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="6" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="成功" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="失败" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA011" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="空闲" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+			<Para  ParaSpecificationT="忙碌" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="成功" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA012" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA013" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+	
+		<!--37-->
+		<TMitem TMitemNoName="THA014" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA015" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA016" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA017" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA018" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0391" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA019" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0391" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA020" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA021" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA022" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="-x*0.0918" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA023" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA024" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.4465" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA025" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA026" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA027" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA028" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*20/256-10" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA029" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*20/256-10" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA030" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA031" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA032" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA033" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA034" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA035" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA036" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA037" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA038" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA039" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA040" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有效" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="无效" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+		</TMitem>
+
+		<!--30-->
+		<TMitem TMitemNoName="THA041" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA042" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA043" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA044" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA045" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA046" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA047" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/100-50" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA048" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10-60" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA049" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/4096/0.00198421639-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA050" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA051" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA052" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA053" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA054" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA055" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA056" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA057" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA058" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA059" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意:下面2个参数共用一个字节-->
+		<TMitem TMitemNoName="THA060" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA061" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--20-->
+		<TMitem TMitemNoName="THA062" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA063" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA064" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA065" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA066" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA067" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面五个参数共用一个字节--> 
+		<TMitem TMitemNoName="THA068" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="5" BitLength="3" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项3" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA069" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有效" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无效" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA070" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="开启" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="关闭" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA071" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA072" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA073" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA074" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA075" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA076" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面两个参数共用两个字节-->
+		<TMitem TMitemNoName="THA077" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="2" BitLength="14" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA078" TMitemSpecificationT="保留" TMitemByteLengthD="2" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--1-->
+		<TMitem TMitemNoName="THA079" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面三个参数共用两个字节-->
+		<TMitem TMitemNoName="THA080" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="4" BitLength="12" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA081" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA082" TMitemSpecificationT="保留" TMitemByteLengthD="2" ByteInherit = "2" BitOffset="0" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--47-->
+		<TMitem TMitemNoName="THA083" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA084" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA085" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA086" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA087" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA088" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA089" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="5" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA090" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="5" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA091" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA092" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA093" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA094" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="3" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<TMitem TMitemNoName="THA095" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA096" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA097" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA095" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA096" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA097" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA098" TMitemSpecificationT="遥测参数名称"  TMitemByteLengthD="1" ByteInherit = "1" BitOffset="0" BitLength="4" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项3" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项4" ParaInitCode="NC" ParaRawCodeH="4"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项5" ParaInitCode="NC" ParaRawCodeH="5"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA099" TMitemSpecificationT="遥测参数名称"  TMitemByteLengthD="1" ByteInherit = "2" BitOffset="4" BitLength="4" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项3" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项4" ParaInitCode="NC" ParaRawCodeH="4"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项5" ParaInitCode="NC" ParaRawCodeH="5"></Para>
+		</TMitem>
+
+		<!--60-->
+		<TMitem TMitemNoName="THA100" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA101" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA102" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA103" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA104" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.01" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA105" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.01" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA106" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA107" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA108" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA109" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA110" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA111" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA112" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA113" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA114" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA115" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA116" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA117" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA118" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA119" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA120" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA121" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA122" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA123" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--4-->
+		<!--注意:下面七个参数共用一个字节-->
+		<TMitem TMitemNoName="THA124" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="7" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="1" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA125" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="6" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA126" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="5" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA127" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA128" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA129" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA130" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意:下面三个参数共用1个字节-->	
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="5" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="保留" TMitemByteLengthD="1"  ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="保留" TMitemByteLengthD="1"  ByteInherit = "0"  TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA135" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0"  TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--2026.2.27新增,慢遥多了13字节-->
+		<TMitem TMitemNoName="THA136" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA137" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA138" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA139" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA140" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA141" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA142" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA143" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA144" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA145" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA146" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA147" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1"  ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--2026.2.27新增,慢遥多了13字节-->
+		<TMitem TMitemNoName="THA148" TMitemSpecificationT="遥测参数名称" TMitemByteLengthD="1" ByteInherit = "0"  TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="遥测参数子选项1" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项2" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项3" ParaInitCode="NC" ParaRawCodeH="02"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项4" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项5" ParaInitCode="NC" ParaRawCodeH="04"></Para>
+			<Para  ParaSpecificationT="遥测参数子选项6" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+		</TMitem>
+
+
+
+		<!--<TMitem TMitemNoName="THA130" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA128" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA129" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA130" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA135" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA136" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA137" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA138" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMsignedType="0" TMitemMinF ="0" TMitemMaxF="255" TMitemNote=""></TMitem>-->
+	</TM>
+
+</SYSTEM>
