@@ -55,9 +55,11 @@ It is designed for ground testing, integration validation, and in-orbit operatio
 +--------------------------------------------------+
 |                    UI Layer                      |
 +--------------------------------------------------+
-|           Command / Telemetry Modules            |
+|                       XML                        |
 +--------------------------------------------------+
-|          Frame Parsing Engine (Lua)              |
+|        Command / Telemetry Modules / Camera      |
++--------------------------------------------------+
+|               Frame Parsing Engine               |
 +--------------------------------------------------+
 |     Communication Abstraction Layer              |
 |     (UART / CAN / LVDS)                          |
