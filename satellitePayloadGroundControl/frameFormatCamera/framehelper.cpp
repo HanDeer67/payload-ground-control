@@ -1,9 +1,11 @@
 #include "framehelper.h"
 #include <QDebug>
 
+
 FrameHelper::FrameHelper(QObject *parent) : QObject(parent)
 {
 
+    dataTransfer = new DataTransfer(this);
 }
 
 // 检查帧长度和校验和是否正确
@@ -71,4 +73,30 @@ QByteArray FrameHelper::frameChecksum(QByteArray byteArray, int checkSumLength){
     /// 写入 QByteArray	用 static_cast<char>(quint8_value)
     /// ✔ 往 QByteArray 写入数据时：quint8 → static_cast<char>
     /// ✔ 从 QByteArray 读取数据时：char → static_cast<quint8>
+}
+
+/// 组装长指令序列源码 帧头+纯指令数据+校验和+帧尾
+QByteArray FrameHelper::lenthCodeAssemble(QList<QDomElement> docNodeList,  QString pureStringData, int row){
+    QString frameHead;
+    QString frameTail;
+    int checkSumLength;
+    QDomElement  tempElem  = docNodeList.at(row).toElement();
+    frameHead  = tempElem.attribute("FrameHeader");
+    frameTail = tempElem.attribute("FrameTail");
+    checkSumLength = tempElem.attribute("CheckSumLength").toInt();
+    qDebug()<<"listHeader"<<frameHead;
+    qDebug()<<"listTail"<<frameTail;
+    qDebug()<<"listCheckSumLength"<<checkSumLength;
+
+   // 添加校验和
+   QByteArray immediateCommand = dataTransfer->string2Bytearray(pureStringData);
+   QByteArray checkSum =  frameChecksum(immediateCommand,checkSumLength);
+   QString checkSumString = QString(checkSum.toHex().toUpper());
+
+   // 添加帧头帧尾
+   QString frameHead0 = "B9E0"; // 是否所有指令都是这个帧头
+   QString byteDataSendString = frameHead + pureStringData + checkSumString + frameTail;
+//    QString byteDataSendString = frameHead0 + tempStringData + checkSumString;
+   qDebug()<<"byteDataSendString"<<byteDataSendString;
+   QByteArray byteDataSend = dataTransfer->string2Bytearray(byteDataSendString);
 }

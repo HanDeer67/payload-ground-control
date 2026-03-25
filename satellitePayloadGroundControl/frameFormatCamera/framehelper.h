@@ -4,6 +4,9 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QDomElement>
+#include <datatransfer.h>
+
 
 class FrameHelper : public QObject
 {
@@ -16,6 +19,8 @@ public:
     void frameAssemble(QByteArray byteArray);
     QByteArray frameChecksum(QByteArray byteArray, int checkSumLength);
 
+    QByteArray lenthCodeAssemble(QList<QDomElement> docNodeList,  QString pureStringData, int currentRow);
+    DataTransfer *dataTransfer;
 signals:
 
 public slots:

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="gb2312"?>
+<SYSTEM SYSTEMAttributeNumD="08" SYSTEMSpecificationT="量子中高轨" XMLtypeT="指令模板" SYSTEMCommandNumD="32" SYSTEMCommandByteLenD="255" SingleFrameCodeH="NC" ComplexFrameCodeH="NC" ScheCmdVectorCodeH = "NC">
+	<!--相机参数设置-->
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="红外相机测试" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="1" CommandParamByteLenH="1" CommandByteLenH="1">
+		
+		<!--参数组0 功能标识-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="0" CommandParaSpecificationT="功能标识" CommandParaByteLengthD="1" CommandParaType="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="跟踪相机工作控制命令" ParaInitCode="NC" ParaRawCodeH="2C"></Para>
+		</CommandPara>
+
+		<!--参数组1 相机工作模式设置1-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="1" CommandParaSpecificationT="相机工作模式设置1" CommandParaByteLengthD="1" CommandParaType="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="24" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="高增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="中增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="低增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="95"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="近似低增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="D5"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="高增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="25"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="中增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="65"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="低增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="近似低增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="E5"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="高增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="中增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="59"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="低增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="99"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="近似低增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="D9"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="高增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="中增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="低增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="A9"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="近似低增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="E9"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="高增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="1D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="中增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="5D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="低增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="9D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="近似低增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="DD"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="20" ParaSpecificationT="高增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="2D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="21" ParaSpecificationT="中增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="6D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="22" ParaSpecificationT="低增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="AD"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="23" ParaSpecificationT="近似低增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="ED"></Para>
+		</CommandPara>
+
+		<!--参数组2 开窗大小-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="2" CommandParaSpecificationT="开窗大小" CommandParaByteLengthD="1" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x/8" CommandParaDecodeTypeT="x*8" CommandParaMinF="64" CommandParaMaxF="512">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="开窗大小(单位：像素)"  ParaInitCode="64" ParaRawCodeH="08"></Para>
+		</CommandPara>
+
+		<!--参数组3 开窗中心位置(X方向)-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="3" CommandParaSpecificationT="开窗中心位置(X方向)" CommandParaByteLengthD="2" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="512">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="开窗中心位置(X方向)" ParaInitCode="320" ParaRawCodeH="0140"></Para>
+		</CommandPara>
+
+		<!--参数组4 开窗中心位置(Y方向)-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="4" CommandParaSpecificationT="开窗中心位置(Y方向)" CommandParaByteLengthD="2" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="512">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="开窗中心位置(Y方向)" ParaInitCode="256" ParaRawCodeH="0100"></Para>
+		</CommandPara>
+
+		<!--参数组5 坏点判断阈值-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="5" CommandParaSpecificationT="坏点判断阈值" CommandParaByteLengthD="1" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x/64" CommandParaDecodeTypeT="x*64" CommandParaMinF="1" CommandParaMaxF="16320">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="坏点判断阈值"  ParaInitCode="2048" ParaRawCodeH="20"></Para>
+		</CommandPara>
+
+		<!--参数组6 积分时间-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="6" CommandParaSpecificationT="积分时间" CommandParaByteLengthD="2" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="65534">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="积分时间"  ParaInitCode="340" ParaRawCodeH="0154"></Para>
+		</CommandPara>
+
+		<!--参数组7 质心判断阈值-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="7" CommandParaSpecificationT="质心判断阈值" CommandParaByteLengthD="1" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x/64" CommandParaDecodeTypeT="x*64" CommandParaMinF="1" CommandParaMaxF="16320">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="质心判断阈值"  ParaInitCode="2560" ParaRawCodeH="28"></Para>
+		</CommandPara>
+
+		<!--参数组8 图像传输间隔-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="8" CommandParaSpecificationT="图像传输间隔" CommandParaByteLengthD="1" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="255">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="图像传输间隔"  ParaInitCode="10" ParaRawCodeH="0A"></Para>
+		</CommandPara>
+
+		<!--参数组9 质心频率-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="9" CommandParaSpecificationT="质心频率" CommandParaByteLengthD="2" CommandParaType="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="6000">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="质心频率"  ParaInitCode="2000" ParaRawCodeH="07D0"></Para>
+		</CommandPara>
+
+		<!--参数组10 图像传输控制-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdxD="10" CommandParaSpecificationT="图像传输控制" CommandParaByteLengthD="1" CommandParaType="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="0" ParaSpecificationT="图像传输启动" ParaInitCode="NC" ParaRawCodeH="07"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdxD="1" ParaSpecificationT="图像传输停止" ParaInitCode="NC" ParaRawCodeH="70"></Para>
+		</CommandPara>
+
+	</Command>
+
+</SYSTEM>

@@ -18,7 +18,9 @@ public:
 
     QByteArray uintTo_3_Bytes(uint32_t value);
     QByteArray uintTo_2_Bytes(uint16_t value);
+    QByteArray uintTo_4_Bytes(uint32_t value);
     qint64 convertSigned(quint64 value, int bitWidth);
+
 private:
     // 私有成员...
 };

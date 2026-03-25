@@ -183,6 +183,8 @@ public:
                                 const QString &attrName,
                                 const QString &newValue);
 
+    void generatelLengthCode();
+
     ImageGraphicsView *view;
     QGraphicsPixmapItem *pixmapItem;
     QVector<QPoint> overThresholdCoords;
@@ -222,8 +224,10 @@ public:
     bool allSend = false;
 
     void sendDataDirect(); // 调试助手页面的CAN页面直接发送数据时调用的函数
+    void sendDataDirectInput(QString textInput, int  identifier);
 
 
+    void sendDataDirectNew(QByteArray byteDataSend);
 private:
     Ui::MainWindow *ui;
 
@@ -239,10 +243,13 @@ private:
 //    QString xmlPath = basePath + "/XmlFiles/CMD/cmd_Camera.xml";
 //    QString xmlPathVisibleLight = basePath + "/XmlFiles/CMD/cmd_Camera_Visible_Light.xml";
 //    QString xmlTmPath = basePath + "/XmlFiles/TM/tm.xml";
-    QString xmlTmPath = basePath + "/XmlFiles/TM/p1_tm_can_fast_all_02.25.xml";
-    QString xmlTmPath_2 = basePath + "/XmlFiles/TM/p1_tm_can_slow_all_02.25.xml";
+//    QString xmlTmPath = basePath + "/XmlFiles/TM/p1_tm_can_fast_all_03.04.xml";
+//    QString xmlTmPath_2 = basePath + "/XmlFiles/TM/p1_tm_can_slow_all_03.19.xml";
+    QString configPath = basePath + "/ConfigFiles/";
+    QString xmlTmPath = basePath + "/XmlFiles/TM/";
+    QString xmlTmPath_2 = basePath + "/XmlFiles/TM/";
     QString CMDXmlFilesPath = basePath + "/XmlFiles/CMD/";
-    QString TMXmlFilesPath = basePath + "/XmlFiles/TM/";
+//    QString TMXmlFilesPath = basePath + "/XmlFiles/TM/";
 
     DataTransfer *dataTransfer;  // 添加 DataTransfer 对象
     SerialPortWorker *serialPortWorker1; // 串口管理对象1
@@ -303,9 +310,14 @@ private:
     DialogPara *dialogPara;
     DialogCanFrame *dialogCanFrame;
     DialogCanFrame2 *dialogCanFrame2;
-    canFrameConfig canFrameConfigUi;
-    canFrameConfig canFrameConfigUi2;
-    canFrameConfig canFrameConfig_tmRequest;
+    canFrameConfig canFrameConfigUi; // 通信接口调试页面帧配置
+    canFrameConfig canFrameConfigUi2; // 指令配置及发送页面帧配置
+    canFrameConfig canFrameConfig_tmRequest; // 遥测请求指令帧配置
+
+    canFrameConfig canFrameConfig_timeMulticast; // 时间广播
+    canFrameConfig canFrameConfig_attiBroadcast; // 姿态组播
+    canFrameConfig canFrameConfig_busiMulticast; // 业务组播
+
 
 
     // can卡管理对象

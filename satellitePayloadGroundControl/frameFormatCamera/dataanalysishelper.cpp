@@ -785,6 +785,7 @@ void DataAnalysisHelper::processTelemetryFrameCAN_slow(const QByteArray &frame) 
         qDebug()<<"code:"<<code;
         int bitLen = 0;
         if(cmd.ByteInherit == "0"){
+            // 继承上个字节，用于共享字节的遥测量
           frameDeal.remove(0,codeLength);
           bitLen = codeLength * 8;
         }

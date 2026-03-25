@@ -22,14 +22,22 @@ public:
 public slots:
     void sendTimerTimeout();
     //发送 trace数据的定时处理函数
-    void sendTraceDataTimerTimeout();
+//    void sendTraceDataTimerTimeout();
     void showSendTimeMsg(QString msg);
     void showSendTraceMsg(QString msg);
+
+public:
+    QCheckBox* getSatelliteCheckBox();
+signals:
+    void timeBroadcastSignal(QString timeBroadcast);
+    void attitudeBroadcastSignal(QString attitudeBroadcast);
+    void sunBroadcastSignal(QString sunBroadcast);
+    void traceBroadcastSignal(QString traceBroadcast);
 
 private slots:
     void on_pb_send_location_clicked();
 
-    void on_pb_send_time_clicked();
+    void on_pb_broadcastStart_clicked();
 
 //    void on_pb_send_satellite_location_clicked();
 
@@ -40,9 +48,9 @@ private slots:
     void on_pb_begin_cmd_inject_clicked();
 
 
-    void on_pb_send_time_clc_clicked();
+//    void on_pb_send_time_clc_clicked();
 
-    void on_pb_choose_curve_clicked();
+    void on_pb_choose_time_clicked();
 
     void on_pb_choose_trace_clicked();
     void on_pb_choose_satellite_clicked();

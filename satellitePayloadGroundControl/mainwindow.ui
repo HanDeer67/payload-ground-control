@@ -90,7 +90,7 @@
               <enum>QTabWidget::Rounded</enum>
              </property>
              <property name="currentIndex">
-              <number>4</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="tab_serial">
               <attribute name="title">
@@ -1522,7 +1522,7 @@
        <layout class="QHBoxLayout" name="horizontalLayout_33">
         <item>
          <widget class="QWidget" name="widget_15" native="true">
-          <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="0,1">
+          <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="0,0">
            <item>
             <widget class="QWidget" name="widget_16" native="true">
              <property name="sizePolicy">
@@ -1660,7 +1660,7 @@
            </item>
            <item>
             <widget class="QWidget" name="widget_17" native="true">
-             <layout class="QVBoxLayout" name="verticalLayout_21">
+             <layout class="QVBoxLayout" name="verticalLayout_55">
               <item>
                <widget class="QWidget" name="widget_18" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_29" stretch="0,1">
@@ -1740,6 +1740,20 @@
                   </widget>
                  </item>
                  <item>
+                  <widget class="QLabel" name="label_83">
+                   <property name="text">
+                    <string> 起始时间</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateTimeEdit" name="dateTimeEdit_cmdList">
+                   <property name="calendarPopup">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QWidget" name="widget_20" native="true">
                    <property name="minimumSize">
                     <size>
@@ -1751,7 +1765,7 @@
                     <item>
                      <widget class="QLabel" name="label_42">
                       <property name="text">
-                       <string>时间戳:</string>
+                       <string>延时时间戳:</string>
                       </property>
                      </widget>
                     </item>
@@ -1884,60 +1898,174 @@
                </widget>
               </item>
               <item>
-               <widget class="QTableWidget" name="tableWidget_cmd_immediately"/>
-              </item>
-              <item>
-               <widget class="QWidget" name="widget_21" native="true">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_32">
-                 <item>
-                  <widget class="QPushButton" name="pb_import_xml">
-                   <property name="text">
-                    <string>导入XML</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_editPara">
-                   <property name="text">
-                    <string>编辑指令行</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pb_export_xml">
-                   <property name="text">
-                    <string>导出XML</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer_16">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>388</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pb_send_cmd">
-                   <property name="text">
-                    <string>发送命令</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
+               <layout class="QHBoxLayout" name="horizontalLayout_54">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_53">
+                  <item>
+                   <widget class="QWidget" name="widget_32" native="true">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_21">
+                     <item>
+                      <widget class="QTableWidget" name="tableWidget_cmd_immediately"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_21" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_32">
+                     <item>
+                      <widget class="QPushButton" name="pb_import_xml">
+                       <property name="text">
+                        <string>导入XML</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_editPara">
+                       <property name="text">
+                        <string>编辑指令行</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pb_export_xml">
+                       <property name="text">
+                        <string>导出XML</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_16">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>388</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_80">
+                       <property name="text">
+                        <string>注：按照时间戳延时、顺序发送指令序列中全部指令</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pb_send_cmd">
+                       <property name="text">
+                        <string>发送指令序列</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_54">
+                  <item>
+                   <widget class="QWidget" name="widget_33" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>300</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>500</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_52">
+                     <item>
+                      <widget class="QPlainTextEdit" name="plainTextEdit_showLengthCode">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1555555</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_31" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>500</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_56">
+                     <item>
+                      <layout class="QGridLayout" name="gridLayout_8">
+                       <item row="1" column="1">
+                        <widget class="QPushButton" name="pushButton_generateLengthCode">
+                         <property name="text">
+                          <string>生成指令序列码</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QComboBox" name="comboBox_cmdListChoose"/>
+                       </item>
+                       <item row="1" column="3">
+                        <widget class="QPushButton" name="pushButton_transmitLengthCode">
+                         <property name="text">
+                          <string>发送指令序列码</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="3">
+                        <widget class="QPushButton" name="pushButton_copyLengthCode">
+                         <property name="text">
+                          <string>复制</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>
@@ -1952,7 +2080,7 @@
         <item>
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_3">
            <attribute name="title">

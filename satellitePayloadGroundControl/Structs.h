@@ -171,6 +171,53 @@ struct FrameTM{
 };
 
 struct canFrameConfig{
+    ///*
+    /// 优先级  0（00）：遥控指令、遥测请求；1（01）：广播/组播指令：2（10）；其余数据：3（11）。
+    /// 源节点地址   1：星务；10：正X；11：负X；8：星载路由；63：姿态组播；
+    /// 组播标识   0（00）：点对点传输；1（01）：组播； 2（10）：保留；3（11）：广播
+    /// 目的节点地址
+    /// 功能码 0：自主发送；1：轮询控制序列（遥测请求、广播、组播）；2：轮询应答；3：遥控指令/数据
+    ///
+    /// 具体示例：
+    /// ①通信口调试页面（下拉框自由配置）
+    /// ②指令配置发送页面（下拉框自由配置）
+    /// ③遥测请求指令
+        //if(ui->radioButton_A->isChecked()){
+        //    canFrameConfig_tmRequest.priority = 0;
+        //    canFrameConfig_tmRequest.srcAddress = 1;
+        //    canFrameConfig_tmRequest.multicast = 0;
+        //    canFrameConfig_tmRequest.destAdrr = 10; // A机
+        //    canFrameConfig_tmRequest.funCode = 1;
+        //}
+        //else{
+        //    canFrameConfig_tmRequest.priority = 0;
+        //    canFrameConfig_tmRequest.srcAddress = 1;
+        //    canFrameConfig_tmRequest.multicast = 0;
+        //    canFrameConfig_tmRequest.destAdrr = 11; // B机
+        //    canFrameConfig_tmRequest.funCode = 1;
+        //}
+    /// ④时间广播
+        //    canFrameConfig_timeMulticast.priority = 1; // 优先级1
+        //    canFrameConfig_timeMulticast.srcAddress = 1; // 源节点：星务
+        //    canFrameConfig_timeMulticast.multicast = 3; //11b  时间广播组播标识11(3)
+        //    canFrameConfig_timeMulticast.destAdrr = 63; // 目的节点：111111b
+        //    canFrameConfig_timeMulticast.funCode = 1; // 轮询应答
+
+    /// ⑤姿态组播
+        //    canFrameConfig_attiBroadcast.priority = 1;// 优先级1
+        //    canFrameConfig_attiBroadcast.srcAddress = 1;// 源节点：星务
+        //    canFrameConfig_attiBroadcast.multicast = 1; // 01b
+        //    canFrameConfig_attiBroadcast.destAdrr = 63; // 111111b
+        //    canFrameConfig_attiBroadcast.funCode = 1;// 轮询应答
+
+    /// ⑥业务组播
+        //    canFrameConfig_busiMulticast.priority = 1;// 优先级1
+        //    canFrameConfig_busiMulticast.srcAddress = 1;// 源节点：星务
+        //    canFrameConfig_busiMulticast.multicast = 1; // 01b
+        //    canFrameConfig_busiMulticast.destAdrr = 31; // 011111b
+        //    canFrameConfig_busiMulticast.funCode = 1;// 轮询应答
+
+    /// */
     // 优先级
     uint32_t priority = 0;
     // 源节点地址

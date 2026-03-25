@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!--这是注释 TM行必须严格配置才能正常被软件识别,特别是帧长度
+-->
+<SYSTEM SYSTEMSpecificationT="正X星遥10G激光载荷-快遥" XMLtypeT="遥测模板">
+	<!--整个数据帧127字节,10字节包头,3字节包尾,114字节纯遥测数据, 项目数正常127个,临时测试59个-->
+	<TM FrameHeader = "007C00110142C0000071" FrameTail = "FBFBFB" CheckSumLength = "0" FrameLength = "114">
+		<TMitem TMitemNoName="THA001" TMitemSpecificationT="ATP自检状态" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA002" TMitemSpecificationT="激光通信建链自检状态" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA003" TMitemSpecificationT="系统时间" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA004" TMitemSpecificationT="跟踪状态标识" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="初始状态" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="等光状态" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="粗跟踪状态" ParaInitCode="NC" ParaRawCodeH="02"></Para>
+			<Para  ParaSpecificationT="切小窗状态" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+			<Para  ParaSpecificationT="精跟踪状态" ParaInitCode="NC" ParaRawCodeH="04"></Para>
+			<Para  ParaSpecificationT="精跟踪临时丢光状态" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+			<Para  ParaSpecificationT="切大窗状态" ParaInitCode="NC" ParaRawCodeH="06"></Para>
+			<Para  ParaSpecificationT="粗跟踪临时丢光状态" ParaInitCode="NC" ParaRawCodeH="07"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA005" TMitemSpecificationT="指向角计算模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="利用注入曲线计算" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para  ParaSpecificationT="利用GPS计算指向角" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="THA006" TMitemSpecificationT="当前使用的曲线序号" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA007" TMitemSpecificationT="轨道计算角度AZ" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*360/65536-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA008" TMitemSpecificationT="轨道计算角度EL" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*360/65536-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA009" TMitemSpecificationT="X方向超前瞄准电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*6.0/60000-3.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA010" TMitemSpecificationT="Y方向超前瞄准电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*6.0/60000-3.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA011" TMitemSpecificationT="粗跟踪模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="粗跟踪关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para  ParaSpecificationT="指向模式" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para  ParaSpecificationT="粗跟踪模式" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para  ParaSpecificationT="粗精卸载跟踪模式(扫描)" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			<Para  ParaSpecificationT="粗精卸载跟踪模式（凝视）" ParaInitCode="NC" ParaRawCodeH="40"></Para>
+			<Para  ParaSpecificationT="粗精卸载跟踪模式（跳步）" ParaInitCode="NC" ParaRawCodeH="43"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA012" TMitemSpecificationT="粗跟踪预指向角AZ" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*360/65536-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA013" TMitemSpecificationT="粗跟踪预指向角EL" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*360/65536-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA014" TMitemSpecificationT="粗跟踪角度反馈AZ" TMitemByteLengthD="3" TMitemType="EDIT" TMitemEncodeTypeT="x*360/16777216-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA015" TMitemSpecificationT="粗跟踪反馈角度EL" TMitemByteLengthD="3" TMitemType="EDIT" TMitemEncodeTypeT="x*360/16777216-180" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA016" TMitemSpecificationT="精跟压电-X方向应变片反馈电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*10/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA017" TMitemSpecificationT="精跟压电-Y方向应变片反馈电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*10/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA018" TMitemSpecificationT="超前压电-X方向应变片反馈电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*10/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA019" TMitemSpecificationT="超前压电-Y方向应变片反馈电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*10/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA020" TMitemSpecificationT="相机质心反馈X" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x/32" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA021" TMitemSpecificationT="相机质心反馈Y" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x/32" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA022" TMitemSpecificationT="相机超阈值点个数" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA023" TMitemSpecificationT="日凌规避模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="处于日凌规避状态" ParaInitCode="NC" ParaRawCodeH="44"></Para>
+			<Para  ParaSpecificationT="非日凌状态" ParaInitCode="NC" ParaRawCodeH="66"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA024" TMitemSpecificationT="日凌规避角度" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*360/65536" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA025" TMitemSpecificationT="ATP LVDS当前工作模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="数据接收状态" ParaInitCode="NC" ParaRawCodeH="22"></Para>
+			<Para  ParaSpecificationT="数据下传状态" ParaInitCode="NC" ParaRawCodeH="24"></Para>
+			<Para  ParaSpecificationT="数据实时下传状态" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+			<Para  ParaSpecificationT="空闲状态" ParaInitCode="NC" ParaRawCodeH="28"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA026" TMitemSpecificationT="ATP 已采集LVDS数据帧数" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA027" TMitemSpecificationT="ATP 已发送LVDS数据帧数" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面这七个遥测量共用一个字节 1121 111-->
+		<!-- <TMitem TMitemNoName="THA028" TMitemSpecificationT="光处理机FPGA重载状态" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="重载中" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="空闲" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA029" TMitemSpecificationT="光处理机FPGA重载结果" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="失败" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="成功" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA030" TMitemSpecificationT="光处理机上电启动位置" TMitemByteLengthD="1"  BitOffset="2" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA031" TMitemSpecificationT="光处理机刷新状态" TMitemByteLengthD="1"  BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="开启" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="关闭" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA032" TMitemSpecificationT="光处理机FPGASEFI异常" TMitemByteLengthD="1"  BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA033" TMitemSpecificationT="内部遥测超时监测" TMitemByteLengthD="1"  BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="超时" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="未超时" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA034" TMitemSpecificationT="光处理机FLASH0片选状态" TMitemByteLengthD="1"  BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="选中" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="未选中" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA028" TMitemSpecificationT="光处理机FPGA重载状态等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<!--注意：下面这七个遥测量共用一个字节 1111 121-->
+		<!-- <TMitem TMitemNoName="THA035" TMitemSpecificationT="光处理机FLASH1片选状态" TMitemByteLengthD="1"  BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="选中" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="未选中" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA036" TMitemSpecificationT="光处理机FLASH2片选状态" TMitemByteLengthD="1"  BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="选中" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="未选中" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA037" TMitemSpecificationT="光处理机FLASH0SEU检测状态" TMitemByteLengthD="1"  BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="检测到SEU" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无SEU" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA038" TMitemSpecificationT="光处理机FLASH1SEU检测状态" TMitemByteLengthD="1"  BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="检测到SEU" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无SEU" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA039" TMitemSpecificationT="光处理机FLASH2SEU检测状态" TMitemByteLengthD="1"  BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="检测到SEU" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无SEU" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA040" TMitemSpecificationT="光处理机FLASHECC结果" TMitemByteLengthD="1"  BitOffset="5" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有错误无法纠正" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="有错误已纠正" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="无错误" ParaInitCode="NC" ParaRawCodeH="10"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA041" TMitemSpecificationT="光处理机FLASH保护状态" TMitemByteLengthD="1"  BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="保护开启" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="保护关闭" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA035" TMitemSpecificationT="光处理机FLASH1片选状态等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面这六个遥测量共用一个字节 1221 11-->
+		<!-- <TMitem TMitemNoName="THA042" TMitemSpecificationT="光处理机FLASH操作状态" TMitemByteLengthD="1"   BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="忙碌" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="空闲" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA043" TMitemSpecificationT="光处理机FLASH操作结果" TMitemByteLengthD="1"   BitOffset="1" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="未检测到错误" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="擦除失败" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="编程失败" ParaInitCode="NC" ParaRawCodeH="10"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA044" TMitemSpecificationT="重构数据校验计算状态" TMitemByteLengthD="1"   BitOffset="3" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="未校验" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="校验中" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="校验计算错误" ParaInitCode="NC" ParaRawCodeH="10"></Para>
+			<Para  ParaSpecificationT="校验计算完成" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA045" TMitemSpecificationT="UART处理状态" TMitemByteLengthD="1"   BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="忙碌" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="空闲" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA046" TMitemSpecificationT="光处理机FPGASEFI记录" TMitemByteLengthD="1"   BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="发生过SEFI" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="未发生SEFI" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA047" TMitemSpecificationT="保留" TMitemByteLengthD="1"   BitOffset="7" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		<TMitem TMitemNoName="THA042" TMitemSpecificationT="光处理机FLASH操作状态等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<TMitem TMitemNoName="THA048" TMitemSpecificationT="光处理机FLASHCRC值" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA049" TMitemSpecificationT="光处理机FLASH重构帧计数" TMitemByteLengthD="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面这两个遥测量共用一个字节 53-->
+		<!-- <TMitem TMitemNoName="THA050" TMitemSpecificationT="光处理机FLASH烧录结果" TMitemByteLengthD="1"   BitOffset="0" BitLength="5" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="未检测到错误" ParaInitCode="NC" ParaRawCodeH="00000"></Para>
+			<Para  ParaSpecificationT="帧间隔超时" ParaInitCode="NC" ParaRawCodeH="00001"></Para>
+			<Para  ParaSpecificationT="单帧接收出错" ParaInitCode="NC" ParaRawCodeH="00010"></Para>
+			<Para  ParaSpecificationT="帧地址不连续" ParaInitCode="NC" ParaRawCodeH="00011"></Para>
+			<Para  ParaSpecificationT="顺序号不连续" ParaInitCode="NC" ParaRawCodeH="00100"></Para>
+			<Para  ParaSpecificationT="未收到重构数据帧" ParaInitCode="NC" ParaRawCodeH="00110"></Para>
+			<Para  ParaSpecificationT="帧间隔过短" ParaInitCode="NC" ParaRawCodeH="01000"></Para>
+			<Para  ParaSpecificationT="帧长度错误" ParaInitCode="NC" ParaRawCodeH="01001"></Para>
+			<Para  ParaSpecificationT="FLASH编程错误" ParaInitCode="NC" ParaRawCodeH="01101"></Para>
+			<Para  ParaSpecificationT="其他错误" ParaInitCode="NC" ParaRawCodeH="11111"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA051" TMitemSpecificationT="保留" TMitemByteLengthD="1"   BitOffset="5" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		<TMitem TMitemNoName="THA050" TMitemSpecificationT="光处理机FLASH烧录结果等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		
+		<TMitem TMitemNoName="THA052" TMitemSpecificationT="光处理机FPGA重载次数" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA053" TMitemSpecificationT="FPGA工作温度" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA054" TMitemSpecificationT="激光光模块发送光功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="10*Math.log(x/10000)" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA055" TMitemSpecificationT="激光光模块接收光功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="10*Math.log(x/10000)" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA056" TMitemSpecificationT="秒内译码后误bit数" TMitemByteLengthD="5" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA057" TMitemSpecificationT="秒内接收空口帧计数" TMitemByteLengthD="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA058" TMitemSpecificationT="秒内接收空口误帧计数" TMitemByteLengthD="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA059" TMitemSpecificationT="帧同步锁定" TMitemByteLengthD="1"   BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="同步成功" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="失去同步" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA060" TMitemSpecificationT="以太网锁定" TMitemByteLengthD="0"   BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="同步成功" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="失去同步" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA061" TMitemSpecificationT="锁相环锁定" TMitemByteLengthD="0"   BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="同步成功" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="失去同步" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA062" TMitemSpecificationT="以太网接收黑名单使能" TMitemByteLengthD="0"   BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="使能" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="禁止" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA063" TMitemSpecificationT="以太网接收白名单使能" TMitemByteLengthD="0"   BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="使能" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="禁止" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA064" TMitemSpecificationT="以太网发送黑名单使能" TMitemByteLengthD="0"   BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="使能" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="禁止" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA065" TMitemSpecificationT="以太网发送白名单使能" TMitemByteLengthD="0"   BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="使能" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="禁止" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA066" TMitemSpecificationT="以太网名单有效" TMitemByteLengthD="0"   BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有效" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无效" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA059" TMitemSpecificationT="帧同步锁定等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面这两个遥测量共用一个字节 26-->
+		<!-- <TMitem TMitemNoName="THA067" TMitemSpecificationT="以太网名单类型" TMitemByteLengthD="1"   BitOffset="0" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="以太网接收白名单" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="以太网接收黑名单" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+			<Para  ParaSpecificationT="以太网发送白名单" ParaInitCode="NC" ParaRawCodeH="10"></Para>
+			<Para  ParaSpecificationT="以太网发送黑名单" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA068" TMitemSpecificationT="以太网名单地址" TMitemByteLengthD="0"   BitOffset="2" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		<TMitem TMitemNoName="THA067" TMitemSpecificationT="以太网名单类型等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		
+		<TMitem TMitemNoName="THA069" TMitemSpecificationT="以太网名单数据" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA070" TMitemSpecificationT="edfa模块温度" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA071" TMitemSpecificationT="edfa模块输入电压" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA072" TMitemSpecificationT="PA输入功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA073" TMitemSpecificationT="BA输入功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA074" TMitemSpecificationT="PA输出功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA075" TMitemSpecificationT="BA输出功率" TMitemByteLengthD="2" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA076" TMitemSpecificationT="模块温度高告警" TMitemByteLengthD="1"   BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA077" TMitemSpecificationT="模块温度低告警" TMitemByteLengthD="1"   BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA078" TMitemSpecificationT="模块电压高告警" TMitemByteLengthD="1"   BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA079" TMitemSpecificationT="模块电压低告警" TMitemByteLengthD="1"   BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA080" TMitemSpecificationT="PA功率输入高告警" TMitemByteLengthD="1"   BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA081" TMitemSpecificationT="PA功率输入低告警" TMitemByteLengthD="1"   BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA082" TMitemSpecificationT="BA功率输入高告警" TMitemByteLengthD="1"   BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA083" TMitemSpecificationT="BA功率输入低告警" TMitemByteLengthD="1"   BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA076" TMitemSpecificationT="模块温度高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA084" TMitemSpecificationT="PA功率输出高告警" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA085" TMitemSpecificationT="PA功率输出低告警" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA086" TMitemSpecificationT="BA功率输出高告警" TMitemByteLengthD="1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA087" TMitemSpecificationT="BA功率输出低告警" TMitemByteLengthD="1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA088" TMitemSpecificationT="PA泵浦1电流高告警" TMitemByteLengthD="1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA089" TMitemSpecificationT="PA泵浦1电流低告警" TMitemByteLengthD="1" BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA090" TMitemSpecificationT="PA泵浦1温度高告警" TMitemByteLengthD="1" BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA091" TMitemSpecificationT="PA泵浦1温度低告警" TMitemByteLengthD="1" BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA084" TMitemSpecificationT="PA功率输出高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA092" TMitemSpecificationT="PA泵浦1背光高告警" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA093" TMitemSpecificationT="PA泵浦1背光低告警" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA094" TMitemSpecificationT="PA泵浦1TEC电流低告警" TMitemByteLengthD="1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA095" TMitemSpecificationT="PA泵浦1TEC电流低告警" TMitemByteLengthD="1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA096" TMitemSpecificationT="BA泵浦1电流高告警" TMitemByteLengthD="1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA097" TMitemSpecificationT="BA泵浦1电流低告警" TMitemByteLengthD="1" BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA098" TMitemSpecificationT="BA泵浦1温度高告警" TMitemByteLengthD="1" BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA099" TMitemSpecificationT="BA泵浦1温度低告警" TMitemByteLengthD="1" BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA092" TMitemSpecificationT="PA泵浦1背光高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA100" TMitemSpecificationT="BA泵浦1背光高告警" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA101" TMitemSpecificationT="BA泵浦1背光低告警" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA102" TMitemSpecificationT="BA泵浦1TEC电流高告警" TMitemByteLengthD="1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA103" TMitemSpecificationT="BA泵浦1TEC电流低告警" TMitemByteLengthD="1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA104" TMitemSpecificationT="BA泵浦2电流高告警" TMitemByteLengthD="1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA105" TMitemSpecificationT="BA泵浦2电流低告警" TMitemByteLengthD="1" BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA106" TMitemSpecificationT="BA泵浦2温度高告警" TMitemByteLengthD="1" BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA107" TMitemSpecificationT="BA泵浦2温度低告警" TMitemByteLengthD="1" BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA100" TMitemSpecificationT="BA泵浦1背光高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA108" TMitemSpecificationT="PA_TOSA电流高告警" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA109" TMitemSpecificationT="PA_TOSA电流低告警" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA110" TMitemSpecificationT="PA_TOSA温度高告警" TMitemByteLengthD="1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA111" TMitemSpecificationT="PA_TOSA温度低告警" TMitemByteLengthD="1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA112" TMitemSpecificationT="PA_TOSA背光高告警" TMitemByteLengthD="1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA113" TMitemSpecificationT="PA_TOSA背光低告警" TMitemByteLengthD="1" BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA114" TMitemSpecificationT="PA_TOSATEC电流高告警" TMitemByteLengthD="1" BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA115" TMitemSpecificationT="PA_TOSATEC电流低告警" TMitemByteLengthD="1" BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA108" TMitemSpecificationT="PA_TOSA电流高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<!--注意：下面这八个遥测量共用一个字节 1111 1111-->
+		<!-- <TMitem TMitemNoName="THA116" TMitemSpecificationT="BA_TOSA电流高告警" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA117" TMitemSpecificationT="BA_TOSA电流低告警" TMitemByteLengthD="1" BitOffset="1" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA118" TMitemSpecificationT="BA_TOSA温度高告警" TMitemByteLengthD="1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA119" TMitemSpecificationT="BA_TOSA温度低告警" TMitemByteLengthD="1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA120" TMitemSpecificationT="BA_TOSA背光高告警" TMitemByteLengthD="1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA121" TMitemSpecificationT="BA_TOSA背光低告警" TMitemByteLengthD="1" BitOffset="5" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA122" TMitemSpecificationT="BA_TOSATEC电流高告警" TMitemByteLengthD="1" BitOffset="6" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA123" TMitemSpecificationT="BA_TOSATEC电流低告警" TMitemByteLengthD="1" BitOffset="7" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem> -->
+		<TMitem TMitemNoName="THA116" TMitemSpecificationT="BA_TOSA电流高告警等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		
+		<TMitem TMitemNoName="THA124" TMitemSpecificationT="四元数0" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA125" TMitemSpecificationT="四元数1" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA126" TMitemSpecificationT="四元数2" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA127" TMitemSpecificationT="四元数3" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		
+		<!--<TMitem TMitemNoName="THA128" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA129" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA130" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA135" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA136" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA137" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA138" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>-->
+
+
+	</TM>
+
+</SYSTEM>

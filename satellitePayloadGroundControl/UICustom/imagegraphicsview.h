@@ -23,6 +23,7 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
     void adjustSceneRect();
 
+
 private:
     double scaleFactor = 1.15; // 缩放因子
 

@@ -1,0 +1,14 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<XML_CFG>
+  <LOG_CFG  name="是否显示日志" isshow="是"/>
+  <!-- 以下为配置序列配置，在界面点击配置序列时调用，可自行添加或删除行
+  type 表示读操作还是写操作 w表示写操作 r表示读操作 
+  adr表示读或写地址(16进制)
+  data表示读或写数据(16进制)
+  -->
+  <ORDER    name="配置序列"    type="w" adr="0x04" data="0x01"/>
+  <ORDER    name="配置序列"    type="r" adr="0x08" data=""/>
+  <ORDER    name="配置序列"    type="w" adr="0x0C" data="0x02"/>
+  <ORDER    name="配置序列"    type="w" adr="0x10" data="0x03"/>
+
+</XML_CFG>

@@ -4,6 +4,13 @@
 
 std::vector<VCI_CAN_OBJ> CANFramer::frameCAN(const QByteArray &tmData, canFrameConfig canFrameConfigInput)
 {
+
+//    qDebug()<<"frameCAN priority"<<canFrameConfigInput.priority;
+//    qDebug()<<"frameCAN srcAddress"<<canFrameConfigInput.srcAddress;
+//    qDebug()<<"frameCAN multicast"<<canFrameConfigInput.multicast;
+//    qDebug()<<"frameCAN destAdrr"<<canFrameConfigInput.destAdrr;
+//    qDebug()<<"frameCAN funCode"<<canFrameConfigInput.funCode;
+
     std::vector<VCI_CAN_OBJ> frames;
 
     int totalLen = tmData.size();

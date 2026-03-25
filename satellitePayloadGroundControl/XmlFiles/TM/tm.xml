@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!--这是注释 TM行必须严格配置才能正常被软件识别，特别是帧长度
+-->
+<SYSTEM SYSTEMSpecificationT="量子中高轨" XMLtypeT="遥测模板">
+	<TM FrameHeader = "EB90" FrameTail = "09D7" CheckSumLength = "2" FrameLength = "169">
+		<TMitem TMitemNoName="TITLE" TMitemSpecificationT="帧格式" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="TITLE" TMitemSpecificationT="帧格式" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="TITLE" TMitemSpecificationT="帧格式" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="TITLE" TMitemSpecificationT="帧格式" TMitemByteLengthD="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="TITLE" TMitemSpecificationT="帧格式" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem  TMitemNoName="LZ136" TMitemSpecificationT="软件版本" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="光电院电性件" ParaInitCode="NC" ParaRawCodeH="22"></Para>
+			<Para  ParaSpecificationT="光电院鉴定件" ParaInitCode="NC" ParaRawCodeH="24"></Para>
+			<Para  ParaSpecificationT="光电院正样件" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+			<Para  ParaSpecificationT="机载样机电性件" ParaInitCode="NC" ParaRawCodeH="42"></Para>
+			<Para  ParaSpecificationT="机载样机鉴定件" ParaInitCode="NC" ParaRawCodeH="44"></Para>
+			<Para  ParaSpecificationT="机载样机正样件" ParaInitCode="NC" ParaRawCodeH="46"></Para>
+			<Para  ParaSpecificationT="天地一体化电性件" ParaInitCode="NC" ParaRawCodeH="62"></Para>
+			<Para  ParaSpecificationT="天地一体化鉴定件" ParaInitCode="NC" ParaRawCodeH="64"></Para>
+			<Para  ParaSpecificationT="天地一体化正样件" ParaInitCode="NC" ParaRawCodeH="68"></Para>
+			<Para  ParaSpecificationT="微纳电性件" ParaInitCode="NC" ParaRawCodeH="82"></Para>
+			<Para  ParaSpecificationT="微纳鉴定件" ParaInitCode="NC" ParaRawCodeH="84"></Para>
+			<Para  ParaSpecificationT="微纳正样件" ParaInitCode="NC" ParaRawCodeH="86"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="LZ137" TMitemSpecificationT="当前工作状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="待机模式" ParaInitCode="NC" ParaRawCodeH="50"></Para>
+			<Para  ParaSpecificationT="实验模式" ParaInitCode="NC" ParaRawCodeH="52"></Para>
+			<Para  ParaSpecificationT="待机模式" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+			<Para  ParaSpecificationT="标校测试模式" ParaInitCode="NC" ParaRawCodeH="28"></Para>
+			<Para  ParaSpecificationT="重构模式" ParaInitCode="NC" ParaRawCodeH="2A"></Para>
+			<Para  ParaSpecificationT="自动建链通信模式" ParaInitCode="NC" ParaRawCodeH="2C"></Para>
+			<Para  ParaSpecificationT="执行序列调试模式" ParaInitCode="NC" ParaRawCodeH="2E"></Para>
+			<Para  ParaSpecificationT="安全模式" ParaInitCode="NC" ParaRawCodeH="40"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="LZ138" TMitemSpecificationT="系统时间" TMitemByteLengthD="4" TMitemType="EDIT"  TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<TMitem TMitemNoName="LZ153" TMitemSpecificationT="粗跟踪模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para ParaSpecificationT="粗跟踪关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaSpecificationT="指向模式" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaSpecificationT="控制跟踪" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para ParaSpecificationT="捕获跟踪" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="LZ154" TMitemSpecificationT="粗跟踪预指向角度AZ" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*360.0/65536-180.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ155" TMitemSpecificationT="粗跟踪预指向角度EL" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*360.0/65536-180.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ156" TMitemSpecificationT="粗跟踪跟踪中心X" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*2048.0/65536+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ157" TMitemSpecificationT="粗跟踪跟踪中心Y" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*2048.0/65536+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ158" TMitemSpecificationT="粗跟踪角度反馈AZ" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*360.0/65536-180.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ159" TMitemSpecificationT="粗跟踪角度反馈EL" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*360.0/65536-180.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ162" TMitemSpecificationT="方位轴电流" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*20.0/65536-10.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ163" TMitemSpecificationT="俯仰轴电流" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*20.0/65536-10.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ164" TMitemSpecificationT="质心数据X" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ165" TMitemSpecificationT="质心数据Y" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ166" TMitemSpecificationT="精跟踪-高压X遥测量" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ167" TMitemSpecificationT="精跟踪-高压Y遥测量" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ168" TMitemSpecificationT="精跟踪-高压z遥测量" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ169" TMitemSpecificationT="精跟踪-应变片X遥测量" TMitemByteLengthD="2" TMitemType="EDIT"  TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精跟踪-应变片Y遥测量" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<TMitem TMitemNoName="LZ166" TMitemSpecificationT="A-X方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ167" TMitemSpecificationT="A-Y方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ168" TMitemSpecificationT="A-COMM端高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ169" TMitemSpecificationT="A-X方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="A-Y方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<TMitem TMitemNoName="LZ166" TMitemSpecificationT="B-X方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ167" TMitemSpecificationT="B-Y方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ168" TMitemSpecificationT="B-COMM端高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ169" TMitemSpecificationT="B-X方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="B-Y方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ166" TMitemSpecificationT="C-X方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ167" TMitemSpecificationT="C-Y方向高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ168" TMitemSpecificationT="C-COMM端高压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*22.86*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ169" TMitemSpecificationT="C-X方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="C-Y方向应变片电压" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2.0*5.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机X方向质心数据" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机Y方向质心数据" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机图像灰度最大值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机图像灰度最小值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机超阈值点个数" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机自适应曝光数值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="粗相机图像灰度累加和" TMitemByteLengthD="4" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机X方向质心数据" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机Y方向质心数据" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*2048.0/65536.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机图像灰度最大值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机图像灰度最小值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机超阈值点个数" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机自适应曝光数值" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ170" TMitemSpecificationT="精相机图像灰度累加和" TMitemByteLengthD="4" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ175" TMitemSpecificationT="已采集LVDS数据帧数" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ176" TMitemSpecificationT="已发送LVDS数据帧数" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ177" TMitemSpecificationT="数据通道状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para ParaSpecificationT="小相机无效+精相机无效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机无效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="A9"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机有效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="A6"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机有效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机无效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="9A"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机无效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="99"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机有效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="96"></Para>
+			<Para ParaSpecificationT="小相机无效+精相机有效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="95"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机无效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="6A"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机无效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机有效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="66"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机有效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="65"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机无效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="5A"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机无效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="59"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机有效+跟踪数据包无效" ParaInitCode="NC" ParaRawCodeH="56"></Para>
+			<Para ParaSpecificationT="小相机有效+精相机有效+跟踪数据包有效" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="LZ178" TMitemSpecificationT="LVDS当前工作模式" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para ParaSpecificationT="数据接收状态" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+			<Para ParaSpecificationT="数据下传状态" ParaInitCode="NC" ParaRawCodeH="C6"></Para>
+			<Para ParaSpecificationT="数据实时下传状态" ParaInitCode="NC" ParaRawCodeH="C0"></Para>
+			<Para ParaSpecificationT="空闲状态" ParaInitCode="NC" ParaRawCodeH="C9"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="LZ181" TMitemSpecificationT="A路110V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*0.0468/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ181" TMitemSpecificationT="B路110V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*0.0468/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ182" TMitemSpecificationT="测角+15V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*5.0/1024.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ183" TMitemSpecificationT="测角-15V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*(-23.75)*1.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ184" TMitemSpecificationT="除温控外+12V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*5.0/1024.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ185" TMitemSpecificationT="除温控外-12V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*(-23.75)*1.0/4096.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ188" TMitemSpecificationT="电机+15V遥测" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*5.0/1024.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+
+		<TMitem TMitemNoName="LZ209" TMitemSpecificationT="玻片旋转机构I找零状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem  TMitemNoName="LZ189" TMitemSpecificationT="玻片旋转机构I当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem  TMitemNoName="LZ210" TMitemSpecificationT="玻片旋转机构II找零状态" TMitemByteLengthD="1" TMitemType="COMBOX"  TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para  ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para  ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem  TMitemNoName="LZ190" TMitemSpecificationT="玻片旋转机构II当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem  TMitemNoName="LZ211" TMitemSpecificationT="玻片旋转机构III找零状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemComboxNumD="6" TMitemComboxSelD="0" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para  ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para  ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem  TMitemNoName="LZ191" TMitemSpecificationT="玻片旋转机构III当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!--新加-->
+		<TMitem  TMitemNoName="LZ212" TMitemSpecificationT="玻片旋转机构IV找零状态" TMitemByteLengthD="1" TMitemType="COMBOX"  TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para  ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para  ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="LZ189" TMitemSpecificationT="玻片旋转机构IV当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem TMitemNoName="LZ213" TMitemSpecificationT="玻片旋转机构V找零状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para  ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para  ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem  TMitemNoName="LZ190" TMitemSpecificationT="玻片旋转机构V当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem  TMitemNoName="LZ214" TMitemSpecificationT="玻片旋转机构VI找零状态" TMitemByteLengthD="1" TMitemType="COMBOX" TMitemComboxNumD="6" TMitemComboxSelD="0" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="找零状态" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+			<Para  ParaSpecificationT="找零结束，未检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			<Para  ParaSpecificationT="找零结束，检测到跳变沿" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+		</TMitem>
+		<TMitem  TMitemNoName="LZ191" TMitemSpecificationT="玻片旋转机构VI当前位置" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="(x-32768)*1.8/41.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem  TMitemNoName="LZ188" TMitemSpecificationT="写FRAM状态" TMitemByteLengthD="1" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem  TMitemNoName="LZ188" TMitemSpecificationT="DSP启动状态" TMitemByteLengthD="1" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem  TMitemNoName="LZ188" TMitemSpecificationT="FPGA版本号" TMitemByteLengthD="1" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+
+		<TMitem   TMitemNoName="校验" TMitemSpecificationT="应用层累加和" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem   TMitemNoName="校验" TMitemSpecificationT="链路层累加和" TMitemByteLengthD="2" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem   TMitemNoName="校验" TMitemSpecificationT="其他" TMitemByteLengthD="6" TMitemType="EDIT"   TMitemEncodeTypeT="x*1.0/1.0+0.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+	</TM>
+
+</SYSTEM>

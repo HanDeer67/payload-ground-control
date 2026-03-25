@@ -27,7 +27,7 @@ void frmPagesDataBroadcast::initForms()
     traceDataSendTimer = new QTimer(this);
     traceDataSendTimer->setTimerType(Qt::TimerType::PreciseTimer);
     traceDataSendTimer->setInterval(1000);
-    connect(traceDataSendTimer,&QTimer::timeout,this,&frmPagesDataBroadcast::sendTraceDataTimerTimeout);
+//    connect(traceDataSendTimer,&QTimer::timeout,this,&frmPagesDataBroadcast::sendTraceDataTimerTimeout);
 
 
     //初始化两个时间
@@ -45,9 +45,9 @@ void frmPagesDataBroadcast::initForms()
     }
 
     ui->dt_base_time->setDateTime(QDateTime::fromTime_t(App::baseTime));
-    ui->dt_start_time->setDateTime(QDateTime::fromTime_t(App::startTime));
+//    ui->dt_start_time->setDateTime(QDateTime::fromTime_t(App::startTime));
 
-    ui->le_curve_path->setReadOnly(true);
+//    ui->le_curve_path->setReadOnly(true);
     ui->le_trace_path->setReadOnly(true);
 
 }
@@ -59,68 +59,88 @@ void frmPagesDataBroadcast::sendTimerTimeout()
     quint16 timeSpanUs = 0;
     //发送时间码
     //FrameAssemble::Instance()->RS422TimeCodeDataSend(timeSpanSecond,timeSpanUs);
-    QString msg = "发送的秒为"+QString::number(timeSpanSecond)+"微妙为:"+QString::number(timeSpanUs);
-    showSendTimeMsg(msg);
+//    QString msg = "发送的秒为"+QString::number(timeSpanSecond)+"微妙为:"+QString::number(timeSpanUs);
+//    showSendTimeMsg(msg);
+
+    // 2026.3.16 适配P1测试需求，时间广播、姿态组播、遥测请求一起发送
+    QString tempTimeEmit = ui->te_time_send->toPlainText();
+    QString tempAttitudeBroadcast = ui->satellite_attitude_data_show->toPlainText();
+    QString tempSunBroadcast = ui->sun_vector_data_show->toPlainText();
+    QString tempTraceBroadcast = ui->te_gps_data_show->toPlainText();
+
+    if(ui->checkBox_addBoardTime->isChecked() && !tempTimeEmit.trimmed().isEmpty()){
+        emit timeBroadcastSignal(tempTimeEmit);
+    }
+    if(ui->checkBox_addBroad_satellite->isChecked()&& !tempAttitudeBroadcast.trimmed().isEmpty()){
+        emit attitudeBroadcastSignal(tempAttitudeBroadcast);
+    }
+    if(ui->checkBox_addBroadSun->isChecked()&& !tempSunBroadcast.trimmed().isEmpty()){
+        emit sunBroadcastSignal(tempSunBroadcast);
+    }
+    if(ui->checkBox_addBoardTrace->isChecked()&& !tempTraceBroadcast.trimmed().isEmpty()){
+        emit traceBroadcastSignal(tempTraceBroadcast);
+    }
+
     startTimeCount++;
 }
 
-void frmPagesDataBroadcast::sendTraceDataTimerTimeout()
-{
-    //读取文件一行然后
-    if(!traceFileHander.fileName().isEmpty() && traceFileHander.isOpen())
-    {
-        //文件还有内容继续发送
-        if(!traceFileHander.atEnd())
-        {
-            QString content = traceFileHander.readLine();
-            QStringList dataList = content.split("\t");
-            if(dataList.length()>=8)
-            {
-                //转换数据并组装cmd进行发送
+//void frmPagesDataBroadcast::sendTraceDataTimerTimeout()
+//{
+//    //读取文件一行然后
+//    if(!traceFileHander.fileName().isEmpty() && traceFileHander.isOpen())
+//    {
+//        //文件还有内容继续发送
+//        if(!traceFileHander.atEnd())
+//        {
+//            QString content = traceFileHander.readLine();
+//            QStringList dataList = content.split("\t");
+//            if(dataList.length()>=8)
+//            {
+//                //转换数据并组装cmd进行发送
 
-                //当前轨道模式：
-                //0x01：注入轨道
-                //0x02：GNSS定位轨道
-                //0x04：无轨道
+//                //当前轨道模式：
+//                //0x01：注入轨道
+//                //0x02：GNSS定位轨道
+//                //0x04：无轨道
 
-                quint8 orbitMode = 0;
+//                quint8 orbitMode = 0;
 
-                int index = ui->cb_trace_mode->currentIndex();
-                orbitMode = index+1;
-                if(orbitMode == 3)orbitMode = 4;
+//                int index = ui->cb_trace_mode->currentIndex();
+//                orbitMode = index+1;
+//                if(orbitMode == 3)orbitMode = 4;
 
 
-                //开始处理文件
+//                //开始处理文件
 
-                float x = dataList.at(0).toFloat();
-                float y = dataList.at(1).toFloat();
-                float z = dataList.at(2).toFloat();
-                float Vx = dataList.at(3).toFloat();
-                float Vy = dataList.at(4).toFloat();
-                float Vz = dataList.at(5).toFloat();
-                quint32 Second = dataList.at(6).toUInt();
-                quint16 ms = dataList.at(7).toUShort();
-                //发送卫星位置数据
-                QString msg = QString("发送数据 X:%1 Y:%2 Z:%3 Vx:%4 Vy:%5 Vz:%6 模式:%7")
-                        .arg(x)
-                        .arg(y)
-                        .arg(z)
-                        .arg(Vx)
-                        .arg(Vy)
-                        .arg(Vz)
-                        .arg(ui->cb_trace_mode->currentText());
-                showSendTraceMsg(msg);
-                FrameAssemble::Instance()->RS422SatelliteOrbitDataSend(orbitMode,Second,ms,x,y,z,Vx,Vy,Vz);
-            }
-        }
-        //到达行尾结束
-        else
-        {
-            stopSendTraceData();
-            showSendTraceMsg("轨道数据广播完毕!");
-        }
-    }
-}
+//                float x = dataList.at(0).toFloat();
+//                float y = dataList.at(1).toFloat();
+//                float z = dataList.at(2).toFloat();
+//                float Vx = dataList.at(3).toFloat();
+//                float Vy = dataList.at(4).toFloat();
+//                float Vz = dataList.at(5).toFloat();
+//                quint32 Second = dataList.at(6).toUInt();
+//                quint16 ms = dataList.at(7).toUShort();
+//                //发送卫星位置数据
+//                QString msg = QString("发送数据 X:%1 Y:%2 Z:%3 Vx:%4 Vy:%5 Vz:%6 模式:%7")
+//                        .arg(x)
+//                        .arg(y)
+//                        .arg(z)
+//                        .arg(Vx)
+//                        .arg(Vy)
+//                        .arg(Vz)
+//                        .arg(ui->cb_trace_mode->currentText());
+//                showSendTraceMsg(msg);
+//                FrameAssemble::Instance()->RS422SatelliteOrbitDataSend(orbitMode,Second,ms,x,y,z,Vx,Vy,Vz);
+//            }
+//        }
+//        //到达行尾结束
+//        else
+//        {
+//            stopSendTraceData();
+//            showSendTraceMsg("轨道数据广播完毕!");
+//        }
+//    }
+//}
 
 void frmPagesDataBroadcast::showSendTimeMsg(QString msg)
 {
@@ -149,6 +169,11 @@ void frmPagesDataBroadcast::showSendTraceMsg(QString msg)
     ui->te_gps_data_show->append(text);
 }
 
+QCheckBox *frmPagesDataBroadcast::getSatelliteCheckBox()
+{
+    return ui->checkBox_addBroad_satellite;
+}
+
 void frmPagesDataBroadcast::on_pb_send_location_clicked()
 {
     //发送位置数据 敏感数据
@@ -160,25 +185,25 @@ void frmPagesDataBroadcast::on_pb_send_location_clicked()
     FrameAssemble::Instance()->RS422SensitiveDataSend(second,ms,X,Y,Z);
 }
 
-void frmPagesDataBroadcast::on_pb_send_time_clicked()
+void frmPagesDataBroadcast::on_pb_broadcastStart_clicked()
 {
 
-    if(ui->pb_send_time->text()=="开始广播")
+    if(ui->pb_broadcastStart->text()=="开始广播")
     {
         startTimeCount = 0;
-        uint v1 = ui->dt_base_time->dateTime().toTime_t();
-        uint v2 = ui->dt_start_time->dateTime().toTime_t();
-//        timeDiffValue = qAbs(v1-v2);
-        if(v1>v2)
-        {
-            timeDiffValue = v1-v2;
-        }
-        else
-        {
-            timeDiffValue = v2-v1;
-        }
+//        uint v1 = ui->dt_base_time->dateTime().toTime_t();
+//        uint v2 = ui->dt_start_time->dateTime().toTime_t();
+////        timeDiffValue = qAbs(v1-v2);
+//        if(v1>v2)
+//        {
+//            timeDiffValue = v1-v2;
+//        }
+//        else
+//        {
+//            timeDiffValue = v2-v1;
+//        }
 
-        qDebug()<<"timeDiffValue"<<timeDiffValue;
+//        qDebug()<<"timeDiffValue"<<timeDiffValue;
         //先发送一条数据 然后开启1s定时器
         sendTimerTimeout();
         if(sendTimeTimer)
@@ -187,11 +212,11 @@ void frmPagesDataBroadcast::on_pb_send_time_clicked()
             sendTimeTimer->start();
         }
 
-        ui->pb_send_time->setText("停止广播");
+        ui->pb_broadcastStart->setText("停止广播");
     }
     else
     {
-        ui->pb_send_time->setText("开始广播");
+        ui->pb_broadcastStart->setText("开始广播");
         if(sendTimeTimer)
         {
             sendTimeTimer->stop();
@@ -307,35 +332,40 @@ void frmPagesDataBroadcast::on_pb_begin_cmd_inject_clicked()
     FrameAssemble::Instance()->LVDSCardDataRecved(0,data);
 }
 
-void frmPagesDataBroadcast::on_pb_send_time_clc_clicked()
+//void frmPagesDataBroadcast::on_pb_send_time_clc_clicked()
+//{
+
+//    uint v1 = ui->dt_base_time->dateTime().toTime_t();
+//    uint v2 = ui->dt_start_time->dateTime().toTime_t();
+
+//    if(v1>v2)
+//    {
+//        timeDiffValue = v1-v2;
+//    }
+//    else
+//    {
+//        timeDiffValue = v2-v1;
+//    }
+
+//    ui->lb_time_diff->setText(QString::number(timeDiffValue));
+
+//    App::baseTime = v1;
+//    App::startTime = v2;
+//    App::writeConfig();
+//}
+
+
+void frmPagesDataBroadcast::on_pb_choose_time_clicked()
 {
-
-    uint v1 = ui->dt_base_time->dateTime().toTime_t();
-    uint v2 = ui->dt_start_time->dateTime().toTime_t();
-
-    if(v1>v2)
-    {
-        timeDiffValue = v1-v2;
-    }
-    else
-    {
-        timeDiffValue = v2-v1;
-    }
-
-    ui->lb_time_diff->setText(QString::number(timeDiffValue));
-
-    App::baseTime = v1;
-    App::startTime = v2;
-    App::writeConfig();
-}
-
-
-void frmPagesDataBroadcast::on_pb_choose_curve_clicked()
-{
-    curevFileName = QFileDialog::getOpenFileName(nullptr,"打开文件","","txt (*.txt);;* (*.*)");
+    QString filter =
+        "数据文件 (*.txt *.csv);;"
+        "文本文件 (*.txt);;"
+        "CSV 文件 (*.csv);;"
+        "所有文件 (*.*)";  // 多个过滤器用 ;; 分隔
+    curevFileName = QFileDialog::getOpenFileName(this,"打开文件","",filter);
     //curevFileName = QFileDialog::getExistingDirectory(this, tr("选择文件保存路径"), "./", QFileDialog::ShowDirsOnly);
     if(curevFileName.isEmpty())return;
-    ui->le_curve_path->setText(curevFileName);
+    ui->le_time_path->setText(curevFileName);
 }
 
 void frmPagesDataBroadcast::on_pb_choose_trace_clicked()

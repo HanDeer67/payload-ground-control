@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<REPLY_CFG>
+
+<!--
+name:为配置项名称
+chno:为配置的通道号
+SET_CFG:对应参数配置(可没有),matchenable为匹配开关,replyenable为应答开关,replydelay为应答延时,matchsrc为匹配源,replydst为应答目的
+ITEM_CFG:对应匹配应答配置,index为条目索引(0-15),matchdata为匹配数据(不超过31字节),replydata为应答数据(不超过1022字节)
+FRM_CFG:对应帧计数配置,used为是否使用,frmlen为帧计数长度(单位为比特),pos为帧计数位置(起始比特位置),start为起始帧计数,stop为结束帧计数,step为步进(负值为递减)
+-->
+	<REPLY_ITEM>
+		<name>通道0应答配置</name>
+		<chno>0</chno><!--通道号-->
+		<SET_CFG  matchenable="1" replyenable="1" replydelay="0" matchsrc="0" replydst="0"/>
+		<ITEM_CFG index="0" matchdata="eb 90 00 01" replydata="eb 91 00 01"/>
+		<ITEM_CFG index="1" matchdata="eb 90 00 02" replydata="eb 91 00 02"/>
+		<FRM_CFG  used="1" frmcntlen="32" pos="0" start="0x00000001" stop="0xFFFFFFFF" step="1"/>
+	</REPLY_ITEM>
+
+	<REPLY_ITEM>
+		<name>通道1应答配置</name>
+		<chno>1</chno><!--通道号-->
+		<SET_CFG  matchenable="1" replyenable="1" replydelay="0" matchsrc="0" replydst="0"/>
+		<ITEM_CFG index="0" matchdata="eb 90 01 01" replydata="eb 91 01 01"/>
+		<ITEM_CFG index="1" matchdata="eb 90 01 02" replydata="eb 91 01 02"/>
+		<FRM_CFG  used="1" frmcntlen="32" pos="0" start="0x00000001" stop="0xFFFFFFFF" step="1"/>
+	</REPLY_ITEM>
+	
+</REPLY_CFG>

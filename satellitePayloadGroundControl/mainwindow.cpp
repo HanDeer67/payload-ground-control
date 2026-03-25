@@ -1,6 +1,8 @@
 #include "mainwindow.h"
+//#include "frmpagesdatabroadcast.h"
 #include "datatransfer.h"
 #include "ui_mainwindow.h"
+//#include "ui_frmpagesdatabroadcast.h"
 #include "LVDS_DLL.h"
 #include <QDebug>
 #include <QtSerialPort>
@@ -14,6 +16,8 @@
 #include "dataanalysishelper.h"
 #include "dialogpara.h"
 #include <QStandardItemModel>
+#include <QSettings>
+#include <QClipboard>
 
 
 
@@ -59,13 +63,22 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("地检主控程序-P1");
     QIcon iconApp(":/Icon/game_hat_mario_retro_super_video_icon_183171.png");
     setWindowIcon(iconApp);
+    // 创建状态栏 显示作者、版本、日期等信息
     QStatusBar *statusBar = new QStatusBar(this);
     setStatusBar(statusBar);
+    // 创建标签并设置信息
     QLabel *infoLabel = new QLabel(this);
-    infoLabel->setText("milurx@163.com | XuXiaohan | Version 1.0.5.260227 | 2026.2.27"); // 1.0.4 通过串口II获取图像 1.0.5 修复xml不匹配等多个问题
+    infoLabel->setText("上海国科航星量子科技有限公司 | XuXiaohan | Version 1.0.6.260324 | 2026.3.24");
+    // 1.0.4 通过串口II获取红外相机图像 1.0.5 修复xml不匹配等多个问题 260316 广播新增同时发送
+    // 1.0.6 遥测xml名称修改无需修改代码并打包发布，只需修改config.ini文件，快遥保持0304版本，慢遥更新到0319版本，18字节的保留变更为17字节，新增1字节的相机温度遥测
+    // 2026.03.24新增指令序列码生成功能
+
     infoLabel->setFont(QFont("Times New Roman", 12));
+    // 设置字体颜色
     infoLabel->setStyleSheet("color: gray;");
+    // 将标签添加到状态栏
     statusBar->addPermanentWidget(infoLabel);
+
 
 //    ui->tabWidget_main->setTabIcon(0, QIcon(":/Icon/3592835-general-hierachy-map-office-site-structure_107768.png"));
 //    ui->tabWidget_main->setTabIcon(1, QIcon(":/Icon/3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.png"));
@@ -130,10 +143,13 @@ MainWindow::MainWindow(QWidget *parent)
         dialogCanFrame2->exec();
     });
 
+
     /// 加载xml文件，创建指令配置表格
     xmlcommandparser = new XMLCommandParser(this);
     // 更新ui界面的当前指令显示
     connect(xmlcommandparser,&XMLCommandParser::updateUiCurComShowSignal,this,[=](QString text){
+//        ui->lb_current_cmd_name->setText(text);
+//        qDebug()<<"ui->lb_current_cmd_name->text()"<<ui->lb_current_cmd_name->text();
         commandList.append(text);
     });
 
@@ -210,6 +226,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBox_baudRate->setCurrentIndex(index3M); // 串口1默认波特率3M
     ui->comboBox_baudRate_2->addItem("2000000",2000000);
     ui->comboBox_baudRate_2->addItem("3000000",3000000);
+    ui->comboBox_baudRate_2->addItem("8000000",8000000);
     ui->comboBox_baudRate_2->addItem("48000000",48000000);
     ui->comboBox_baudRate_2->setCurrentIndex(index115200); // 串口2默认波特率115200
 
@@ -843,6 +860,14 @@ MainWindow::MainWindow(QWidget *parent)
                     break; // 找到后退出循环
                 }
             }
+            /**
+              时间：2026.3.19
+              现象：部分全部遥测帧的遥测添加到兴趣帧时与遥测帧不同步
+              问题：上述代码的逻辑是1.收到遥测帧更新信号后，遍历收到的遥测列表，填入modelMain 2.同步更新兴趣帧：在遍历接收到的遥测列表时，对于每一个遥测项，都提取
+                    其中的遥测编号文本，与兴趣帧窗口中的编号对比，如果相符，说明当前遥测属于兴趣帧，即提取paraListUiList中对应索引的遥测项，更新到兴趣帧表格中，实现
+                    遥测同步。所以，一旦xml中有两个遥测的编号是一样的（没有规范更新），就会出现兴趣遥测参数被多次更新以后与左侧原始遥测值不符的情况。
+              修复：无需更新代码，整理xml文件，确认每个遥测项目的编号具有唯一性即可。这也就回答了为什么同样设计的HNH没有出现这个问题，因为HNH没有出现编号重复的情况。
+            */
         }
 
         qDebug()<<"读取前 isSaveTMFile"<<isSaveTMFile_slow;
@@ -1048,6 +1073,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->pushButton_send->setCheckable(false);
     ui->pushButton_send_2->setCheckable(false);
+
 
     /// RS422板卡界面初始化配置
     // 波特率
@@ -1666,16 +1692,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView_3_slow->verticalHeader()->setStyleSheet("QHeaderView::section { background-color: rgba(255,255,255,40); }");
 
     ui->tableView_4_slow->horizontalHeader()->setStyleSheet("QHeaderView::section { background-color: rgba(255,255,255,40); }");
-    ui->tableView_4_slow->verticalHeader()->setStyleSheet("QHeaderView::section { background-color: rgba(255,255,255,0); }");
+    ui->tableView_4_slow->verticalHeader()->setStyleSheet("QHeaderView::section { background-color: rgba(255,255,255,40); }");
 
 
 
     connect(xmlcommandparser,&XMLCommandParser::updateTMParaListSignal,this,[=](QVector<TMitemQueue> paraQueueVector){
-
         dataAnalysisHelperRS422->getXmlParser(paraQueueVector);
         dataAnalysisHelper2->getXmlParser(paraQueueVector); // 临时测试用
     });
-
     connect(xmlcommandparser,&XMLCommandParser::updateTMParaListSignal,this,[=](QVector<TMitemQueue> paraQueueVector){
         dataAnalysisHelperCAN->getXmlParser(paraQueueVector);
     });
@@ -1927,7 +1951,8 @@ MainWindow::MainWindow(QWidget *parent)
     }); // 发送立即令
     connect(ui->pb_del_cmd,&QPushButton::clicked,this,&MainWindow::delCMDList); // 删除指令序列
     connect(ui->pb_clear_cmd,&QPushButton::clicked,this,&MainWindow::clearCMDList); // 清空指令序列
-//    tableWidget_cmd_immediately
+    connect(ui->pushButton_generateLengthCode,&QPushButton::clicked,this,&MainWindow::generatelLengthCode);// 生成指令序列长字节串
+
 
     // 按顺序和时间戳发送指令序列
     connect(ui->pb_send_cmd,&QPushButton::clicked,this,[=](){
@@ -2702,7 +2727,6 @@ MainWindow::MainWindow(QWidget *parent)
             ui->pb_begin_request->setText("开始请求");
             qDebug() << "停止循环发送遥测请求";
         }
-
     });
     emit canTmIsOpeUpdateSignal_slow(true);
     connect(ui->pb_begin_request_slow,&QPushButton::clicked,this,[=](){
@@ -2836,6 +2860,26 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
+    // 指令序列长码类别选择
+    ui->comboBox_cmdListChoose->addItem("开机自检指令序列",0x7F01);
+    ui->comboBox_cmdListChoose->addItem("收发光轴标校指令序列",0x7F02);
+    ui->comboBox_cmdListChoose->addItem("星间标校指令序列",0x7F03);
+    ui->comboBox_cmdListChoose->addItem("建链指令序列",0x7F04);
+    ui->comboBox_cmdListChoose->setCurrentIndex(0);
+    connect(ui->pushButton_copyLengthCode,&QPushButton::clicked,[=](){
+        QString text = ui->plainTextEdit_showLengthCode->toPlainText();
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(text);
+    });
+    connect(ui->pushButton_transmitLengthCode,&QPushButton::clicked,[=](){
+        // 发送指令序列码
+        QString dataToSendString = ui->plainTextEdit_showLengthCode->toPlainText();
+        QByteArray dataToSendArray = dataTransfer->string2Bytearray(dataToSendString);
+//        qDebug()<<"dataToSendArray"<<dataToSendArray.toHex(' ').toUpper();
+        sendDataDirectNew(dataToSendArray);
+    });
+
+
     ///********************************广播P1临时测试*****************************************
     // t6暂时没用上，暂时使用QTimer实现循环发送
     t6 = new QThread();
@@ -2863,8 +2907,53 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     ///********************************广播正式*****************************************
+
+    /// ④时间广播
+            canFrameConfig_timeMulticast.priority = 1; // 优先级1
+            canFrameConfig_timeMulticast.srcAddress = 1; // 源节点：星务
+            canFrameConfig_timeMulticast.multicast = 3; //11b  时间广播组播标识11(3)
+            canFrameConfig_timeMulticast.destAdrr = 63; // 目的节点：111111b
+            canFrameConfig_timeMulticast.funCode = 1; // 轮询应答
+
+    /// ⑤姿态组播
+            canFrameConfig_attiBroadcast.priority = 1;// 优先级1
+            canFrameConfig_attiBroadcast.srcAddress = 1;// 源节点：星务
+            canFrameConfig_attiBroadcast.multicast = 1; // 01b
+            canFrameConfig_attiBroadcast.destAdrr = 63; // 111111b
+            canFrameConfig_attiBroadcast.funCode = 1;// 轮询应答
+
+    /// ⑥业务组播
+            canFrameConfig_busiMulticast.priority = 1;// 优先级1
+            canFrameConfig_busiMulticast.srcAddress = 1;// 源节点：星务
+            canFrameConfig_busiMulticast.multicast = 1; // 01b
+            canFrameConfig_busiMulticast.destAdrr = 31; // 011111b
+            canFrameConfig_busiMulticast.funCode = 1;// 轮询应答
+
     frmPagesDataBroadcast *broadcastPage = new frmPagesDataBroadcast(this);
     ui->verticalLayout_50->addWidget(broadcastPage);
+    broadcastPage->getSatelliteCheckBox()->setChecked(true);
+    connect(broadcastPage,&frmPagesDataBroadcast::timeBroadcastSignal,this,[=](QString timeBroadcast){
+        qDebug()<<"timeBroadcast"<<timeBroadcast;
+        int  identifier = 0; // 0表示时间广播
+        sendDataDirectInput(timeBroadcast, identifier);
+    });
+    connect(broadcastPage,&frmPagesDataBroadcast::attitudeBroadcastSignal,this,[=](QString attitudeBroadcast){
+        qDebug()<<"attitudeBroadcast"<<attitudeBroadcast;
+        int  identifier = 1; // 1表示姿控组播
+        sendDataDirectInput(attitudeBroadcast, identifier);
+    });
+//    connect(broadcastPage,&frmPagesDataBroadcast::sunBroadcastSignal,this,[=](QString sunBroadcast){
+//        qDebug()<<"sunBroadcast"<<sunBroadcast;
+//        int  identifier = 2;
+//        sendDataDirectInput(sunBroadcast,identifier);
+//    });
+    connect(broadcastPage,&frmPagesDataBroadcast::traceBroadcastSignal,this,[=](QString traceBroadcast){
+        qDebug()<<"traceBroadcast"<<traceBroadcast;
+        int  identifier = 2; // 2表示业务组播
+        sendDataDirectInput(traceBroadcast, identifier);
+    });
+
+
 
 }
 
@@ -4060,6 +4149,8 @@ void MainWindow::updateCommandAttribute(QDomElement &commandElem,
 }
 
 
+
+
 // 右键单击ui->listWidget_2菜单删除指令组
 void MainWindow::onListWidgetContextMenuRequested(const QPoint &pos)
 {
@@ -4106,6 +4197,184 @@ void MainWindow::onListWidgetContextMenuRequested(const QPoint &pos)
     }
 }
 
+
+void MainWindow::generatelLengthCode()
+{
+    // 创建一个数组用于存放长指令码
+    QByteArray lengthCmdArray;
+    // 开始生成指令长码
+    // 1. 准备所有指令完全帧
+    // 获取指令序列行数和列数
+    int rowCount = ui->tableWidget_cmd_immediately->rowCount();
+    int columnCount = ui->tableWidget_cmd_immediately->columnCount();
+    if(rowCount<1 | columnCount<1){
+        QMessageBox::warning(this, "提示", "请配置并载入指令序列后再执行该操作");
+        return;
+    }
+
+    int sourceColumnIndex = -1;
+    // 遍历表头，查找“源码”所在列索引
+    for (int col = 0; col < columnCount; ++col) {
+        QString headerText = ui->tableWidget_cmd_immediately->horizontalHeaderItem(col)->text();
+        if (headerText == "源码") {
+            sourceColumnIndex = col;
+            break;
+        }
+    }
+    if(sourceColumnIndex == -1){
+        QMessageBox::warning(this, "提示", "当前指令序列中没有“源码”");
+        return;
+    }
+
+    for (int row = 0; row < rowCount; row++) {
+        QString tempStringData = ui->tableWidget_cmd_immediately->item(row,sourceColumnIndex)->text();// 获取纯指令数据 QString
+//        QByteArray byteDataSend = frameHelper->lenthCodeAssemble(docNodeList, tempStringData, row); // 组装指令
+        QDomElement  tempElem  = docNodeList.at(row).toElement();
+        int checkSumLength = tempElem.attribute("CheckSumLength").toInt();
+        QByteArray immediateCommand = dataTransfer->string2Bytearray(tempStringData);// 获取纯指令数据 QByteArray
+
+        // tempStringData是没有添加任何外壳的纯指令数据（QString），immediateCommand是没有添加任何外壳的纯指令数据（QByteArray）
+        // 创建一个专用的CAN指令组装函数，这个函数用于给指令数据套上外壳，如校验、指令码等
+        // ⭐️指令码（2字节）
+       QString paraCode  = tempElem.attribute("paraCode");
+       // 长度字节
+       QString commandLenth = "";
+       //  ⭐️字节长度(0字节或2字节)
+//       if(immediateCommand.size()<=5){
+//           // 单帧足够
+//            commandLenth = ""; // 0字节
+//       }
+//       else{
+//           // 需要多帧才够
+//           commandLenth = QString("%1").arg(immediateCommand.size() + 2, 4, 16, QChar('0')).toUpper(); // 2字节
+//       }
+       /// 注意：在生成指令序列时，每一个单个指令，无论长短都需要添加2字节的长度。这一点和发送立即令不同，在立即令中，只有一帧不够的时候才需要添加2字节的帧长度。
+       commandLenth = QString("%1").arg(immediateCommand.size() + 2, 4, 16, QChar('0')).toUpper(); // 2字节
+
+        // 先组一帧
+        QString canParaQSring =  commandLenth + paraCode + tempStringData;
+        QByteArray canParaQByteArray = dataTransfer->string2Bytearray(canParaQSring);
+        //⭐️校验和（1字节）
+        // 判断单帧和多帧，要匹配不同的校验和
+        QByteArray checkSumCan;
+        if(commandLenth.size() >0){
+            QByteArray tempArray = canParaQByteArray.mid(2,-1);
+            checkSumCan =  frameHelper->frameChecksum(tempArray,checkSumLength);
+        }
+        else{
+            checkSumCan =  frameHelper->frameChecksum(canParaQByteArray,checkSumLength);
+        }
+        QString checkSumCanString = QString(checkSumCan.toHex().toUpper());
+        // 检查指令长度，包括指令码、校验和，如果超过8字节就添加额外的长度，占据第一第二字节
+        canParaQSring += checkSumCanString;
+
+        QByteArray commandCanFrame = dataTransfer->string2Bytearray(canParaQSring); /// P1 CAN通信中完整的一条指令内容
+        // 添加序号（1字节）和时间戳（4字节）
+        if(row>255){
+            QMessageBox::warning(this, "警告", "指令序列行超过最大值255！");
+            return;
+        }
+        QString cmdNoString = QString::number(row);
+        QByteArray cmdNo = dataTransfer->string2Bytearray(cmdNoString);
+        qDebug()<<"指令序号源码1字节："<<cmdNo.toHex().toUpper();
+        // 时间戳：读取列表第0列
+        QString timeDelay = ui->tableWidget_cmd_immediately->item(row,0)->text();
+        // 获取起始时间
+        // 核心步骤：
+        // a. 获取QDateTimeEdit的时间
+        QDateTime dateTime = ui->dateTimeEdit_cmdList->dateTime();
+
+        // b. 转换为Unix时间戳（秒）（Qt 5.8+ 推荐用toSecsSinceEpoch）
+        qint64 timestampSec = dateTime.toSecsSinceEpoch();
+        // 注：如果是Qt 5.7及以下，用 toTime_t()（返回unsigned int）
+        // unsigned int timestampSec = dateTime.toTime_t();
+
+        // c. 转为int uint32_t
+        uint32_t startTime = static_cast<uint32_t>(timestampSec);
+        qDebug()<<"起始时间为"<<startTime;
+        uint32_t delayTime = timeDelay.toUInt();
+        qDebug()<<"延迟时间为"<<delayTime;
+        uint32_t timeDelayInt = startTime + timeDelay.toUInt();
+        qDebug()<<"总时间戳"<<timeDelayInt;
+        QByteArray timeDelayArray = dataTransfer->uintTo_4_Bytes(timeDelayInt);
+        qDebug()<<"时间戳源码4字节："<<timeDelayArray.toHex().toUpper();
+        commandCanFrame.prepend(timeDelayArray);
+        commandCanFrame.prepend(cmdNo);
+        qDebug()<<"单条数据内容"<<commandCanFrame.toHex().toUpper();
+
+        lengthCmdArray.append(commandCanFrame); // 开始拼接长指令序列源码
+    }
+    qDebug()<<"整个长指令序列的数据："<<lengthCmdArray.toHex().toUpper();
+    // 添加2字节长度和2字节指令码
+    // 从combbox获取指令码
+    // 读取显示文本并转换为QByteArray
+    QVariant  data  = ui->comboBox_cmdListChoose->currentData(); // 获取当前选中的文本
+    quint16 value = static_cast<uint16_t>(data.toUInt());
+    QByteArray cmdCodeByteArray;
+    cmdCodeByteArray.append(static_cast<char>((value >> 8) & 0xFF));  // 高字节
+    cmdCodeByteArray.append(static_cast<char>(value & 0xFF));         // 低字节
+    qDebug()<<"指令码"<<cmdCodeByteArray.toHex().toUpper();
+    lengthCmdArray.prepend(cmdCodeByteArray);
+
+    // 字节长度
+    uint16_t codeLength =  static_cast<uint16_t>(lengthCmdArray.size());
+    QByteArray codeLengthArray = dataTransfer->uintTo_2_Bytes(codeLength);
+    qDebug()<<"字节长度"<<codeLengthArray.toHex().toUpper();
+    lengthCmdArray.prepend(codeLengthArray);
+
+    ui->plainTextEdit_showLengthCode->setPlainText(lengthCmdArray.toHex(' ').toUpper());
+
+}
+
+void MainWindow::sendDataDirectNew(QByteArray byteDataSend){
+    /// 1. 通过串口1发送
+    if(ui->checkBox_COMI->isChecked()) emit writeDataSignal(byteDataSend);
+
+    /// 2. 通过串口2发送
+    if(ui->checkBox_COMII->isChecked()) emit writeDataSignal_2(byteDataSend);
+
+    /// 3. 通过板卡RS422发送
+    if (ui->checkBox_CARDRS422->isChecked()){
+        // 通过板卡发送
+        // 检查板卡是否使能
+        bool cardOpenStatus = cardWorker1->getLVDSCardOpenStatus(false);
+        if(!cardOpenStatus){
+            qmessageBoxSet("发送失败，RS422板卡未打开！");
+            return;
+        }
+        else {
+            // 获取通道数
+            quint8 channel = cardWorker1->getChannelNum(true);
+            DWORD dwSendRet = cardWorker1->sendData(true,channel, reinterpret_cast<quint8*>(byteDataSend.data()), static_cast<size_t>(byteDataSend.length())); // 新的写法
+        }
+    }
+
+    /// 4. 通过CAN总线发送
+    if(ui->checkBox_CAN->isChecked() ){
+
+        if(ui->pushButton_startCAN->text() == "停止"){
+            auto frames = canFrameHelper->frameCAN(byteDataSend,canFrameConfigUi2);
+            for(auto &obj : frames)
+            {
+                int ret = canWorker1->transmit(nDeviceType, nDeviceInd, nCANInd, &obj,1);  // 发送数据，其实就已经写进缓存区了
+
+                if(ret > 0){
+                    QString byteDataSendSizeString = QString::number(obj.DataLen);
+                    ui->plainTextEdit_statusBar_3->appendPlainText("数据发送成功，数据长度：" + byteDataSendSizeString + "字节");
+                    // qDebug() << "CAN 发送成功，字节数：" << byteDataSend.size();
+                } else {
+                    // qDebug() << "CAN 发送失败！错误码：" << VCI_ReadErrInfo(DevType, DevIndex, 0);
+                    ui->plainTextEdit_statusBar_3->appendPlainText("数据发送失败");
+                }
+                QThread::msleep(35);
+            }
+        }
+        else{
+            qmessageBoxSet("请先使能CAN通道！");
+        }
+    }
+}
+
 void MainWindow::sendCMD(int sendIndex, bool directOrList)
 {
     // 检查当前指令应该从哪个接口发送
@@ -4147,10 +4416,10 @@ void MainWindow::sendCMD(int sendIndex, bool directOrList)
         return;
     }
 
-    // 获取纯指令数据
-    QString tempStringData = ui->tableWidget_cmd_immediately->item(row,sourceColumnIndex)->text();
 
-    // 获取帧头、帧尾、校验和长度
+    QString tempStringData = ui->tableWidget_cmd_immediately->item(row,sourceColumnIndex)->text();// 获取纯指令数据 QString
+
+    /* 获取帧头、帧尾、校验和长度
      QString frameHead;
      QString frameTail;
      int checkSumLength;
@@ -4172,13 +4441,17 @@ void MainWindow::sendCMD(int sendIndex, bool directOrList)
     QString byteDataSendString = frameHead + tempStringData + checkSumString + frameTail;
 //    QString byteDataSendString = frameHead0 + tempStringData + checkSumString;
     qDebug()<<"byteDataSendString"<<byteDataSendString;
-    QByteArray byteDataSend = dataTransfer->string2Bytearray(byteDataSendString);
+    QByteArray byteDataSend = dataTransfer->string2Bytearray(byteDataSendString); */
 
-    // 通过串口1发送
+    QByteArray byteDataSend = frameHelper->lenthCodeAssemble(docNodeList, tempStringData, row); // 组装指令完整源码
+
+    /// 1. 通过串口1发送
     if(ui->checkBox_COMI->isChecked()) emit writeDataSignal(byteDataSend);
-    // 通过串口2发送
+
+    /// 2. 通过串口2发送
     if(ui->checkBox_COMII->isChecked()) emit writeDataSignal_2(byteDataSend);
-    // 通过板卡RS422发送
+
+    /// 3. 通过板卡RS422发送
     if (ui->checkBox_CARDRS422->isChecked()){
         // 通过板卡发送
         // 检查板卡是否使能
@@ -4194,18 +4467,23 @@ void MainWindow::sendCMD(int sendIndex, bool directOrList)
         }
     }
 
-    // 通过CAN总线发送
+    /// 4. 通过CAN总线发送
     if(ui->checkBox_CAN->isChecked() ){
+
+        QDomElement  tempElem  = docNodeList.at(row).toElement();
+        int checkSumLength = tempElem.attribute("CheckSumLength").toInt();
+        QByteArray immediateCommand = dataTransfer->string2Bytearray(tempStringData);// 获取纯指令数据 QByteArray
+
         // tempStringData是没有添加任何外壳的纯指令数据（QString），immediateCommand是没有添加任何外壳的纯指令数据（QByteArray）
         // 创建一个专用的CAN指令组装函数，这个函数用于给指令数据套上外壳，如校验、指令码等
         // ⭐️指令码（2字节）
        QString paraCode  = tempElem.attribute("paraCode");
        // 长度字节
        QString commandLenth = "";
-       //   ⭐️字节长度(0字节或2字节)
+       //  ⭐️字节长度(0字节或2字节)
        if(immediateCommand.size()<=5){
            // 单帧足够
-            commandLenth = ""; // 0字节
+            commandLenth = ""; // 0字节,单帧的时候不需要在前面添加2字节的指令长度
        }
        else{
            // 需要多帧才够
@@ -4228,9 +4506,9 @@ void MainWindow::sendCMD(int sendIndex, bool directOrList)
         QString checkSumCanString = QString(checkSumCan.toHex().toUpper());
         // 检查指令长度，包括指令码、校验和，如果超过8字节就添加额外的长度，占据第一第二字节
         canParaQSring += checkSumCanString;
-        QByteArray commandCanFrame = dataTransfer->string2Bytearray(canParaQSring);
+        QByteArray commandCanFrame = dataTransfer->string2Bytearray(canParaQSring); /// P1 CAN通信中完整的一条指令内容
         qDebug()<<"*********canParaQSring*********"<<canParaQSring;
-        auto frames = canFrameHelper->frameCAN(commandCanFrame,canFrameConfigUi2); // 指令页面配置
+
         if(ui->pushButton_startCAN->text() == "停止"){
             auto frames = canFrameHelper->frameCAN(commandCanFrame,canFrameConfigUi2);
             for(auto &obj : frames)
@@ -4537,8 +4815,82 @@ void MainWindow::sendDataDirect()
     QByteArray byteDataSend = dataTransfer->string2Bytearray(tempStringData);
     qDebug()<<"CAN byteDataSend.size："<<byteDataSend.size();
 
-
     auto frames = canFrameHelper->frameCAN(byteDataSend,canFrameConfigUi);
+    for(auto &obj : frames)
+    {
+        int ret = canWorker1->transmit(nDeviceType, nDeviceInd, nCANInd, &obj,1);  // 发送数据，其实就已经写进缓存区了
+        if(ret > 0){
+            QString byteDataSendSizeString = QString::number(obj.DataLen);
+//                obj.Data
+            ui->plainTextEdit_statusBar_3->appendPlainText("数据发送成功，数据长度：" + byteDataSendSizeString + "字节");
+            // qDebug() << "CAN 发送成功，字节数：" << byteDataSend.size();
+        } else {
+             qDebug() << "CAN 发送失败";
+            ui->plainTextEdit_statusBar_3->appendPlainText("数据发送失败");
+        }
+
+    }
+}
+
+/// 2026.3.18下面这个函数是开发用来发送广播的，输入的文本就是广播的内容，注意，不同的广播内容对应不同的帧格式，所以要根据广播类型配置帧格式ID
+void MainWindow::sendDataDirectInput(QString textData, int identifier)
+{
+    canFrameConfig tempCanFrameConfig;
+
+    switch (identifier) {
+        case 0:
+            qDebug()<<"切换时间广播帧配置";
+            tempCanFrameConfig = canFrameConfig_timeMulticast;
+            qDebug()<<"priority"<<tempCanFrameConfig.priority;
+            qDebug()<<"srcAddress"<<tempCanFrameConfig.srcAddress;
+            qDebug()<<"multicast"<<tempCanFrameConfig.multicast;
+            qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
+            qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
+            break;
+        case 1:
+            qDebug()<<"切换姿控组播帧配置";
+            tempCanFrameConfig = canFrameConfig_attiBroadcast;
+            qDebug()<<"priority"<<tempCanFrameConfig.priority;
+            qDebug()<<"srcAddress"<<tempCanFrameConfig.srcAddress;
+            qDebug()<<"multicast"<<tempCanFrameConfig.multicast;
+            qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
+            qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
+            break;
+        case 2:
+            qDebug()<<"切换业务组播帧配置";
+            tempCanFrameConfig = canFrameConfig_busiMulticast;
+            qDebug()<<"priority"<<tempCanFrameConfig.priority;
+            qDebug()<<"srcAddress"<<tempCanFrameConfig.srcAddress;
+            qDebug()<<"multicast"<<tempCanFrameConfig.multicast;
+            qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
+            qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
+            break;
+        default:
+            qDebug()<<"没有找到广播帧标识，切换默认帧配置——时间广播帧配置";
+            tempCanFrameConfig = canFrameConfig_timeMulticast;
+            qDebug()<<"priority"<<tempCanFrameConfig.priority;
+            qDebug()<<"srcAddress"<<tempCanFrameConfig.srcAddress;
+            qDebug()<<"multicast"<<tempCanFrameConfig.multicast;
+            qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
+            qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
+            break;
+    }
+
+    if (ui->pushButton_openCAN->text()=="打开") {
+        ui->plainTextEdit_statusBar_3->appendPlainText("请先打开 CAN 通道！");
+        return;
+    }
+    // 准备数据
+    QString tempStringData = textData;
+    QByteArray byteDataSend = dataTransfer->string2Bytearray(tempStringData);
+    qDebug()<<"CAN byteDataSend.size："<<byteDataSend.size();
+
+//    qDebug()<<"333***priority"<<tempCanFrameConfig.priority;
+//    qDebug()<<"333***srcAddress"<<tempCanFrameConfig.srcAddress;
+//    qDebug()<<"333***multicast"<<tempCanFrameConfig.multicast;
+//    qDebug()<<"333***destAdrr"<<tempCanFrameConfig.destAdrr;
+//    qDebug()<<"333***funCode"<<tempCanFrameConfig.funCode;
+    auto frames = canFrameHelper->frameCAN(byteDataSend,tempCanFrameConfig);
     for(auto &obj : frames)
     {
         int ret = canWorker1->transmit(nDeviceType, nDeviceInd, nCANInd, &obj,1);  // 发送数据，其实就已经写进缓存区了
@@ -4675,8 +5027,32 @@ void MainWindow::init()
 {
     /// xml：注意，readTmXML()内部会发送很多信号，如果槽函数是在readTmXML(xmlTmPath);之后创建的，那么这些信号发送时，槽函数都不会有反应，因为此时还没有创建连接
     qDebug()<<"***************初始化**************";
-    readTmXML(xmlTmPath);
-    readTmXML_slow(xmlTmPath_2);
+    // 从config.ini中读取快慢遥xml文件名
+    QSettings settings(configPath+ "/config.ini", QSettings::IniFormat);
+    qDebug() << settings.allKeys();
+    // 检查配置文件是否可读
+    if (settings.status() != QSettings::NoError) {
+        qWarning() << "配置文件config.ini读取失败！";
+        return;
+    }
+
+    QString fastXmlFileName = settings.value("Settings/fast_xml_file_name").toString();
+    QString slowXmlFileName = settings.value("Settings/slow_xml_file_name").toString();
+    qDebug() << "Fast XML file name from config:" << fastXmlFileName;
+    qDebug() << "Slow XML file name from config:" << slowXmlFileName;
+
+    QString fastXmlPath = xmlTmPath+fastXmlFileName;
+    QString slowXmlPath = xmlTmPath+slowXmlFileName;
+    // 检查文件是否存在
+    if (!QFile::exists(fastXmlPath)) {
+        qWarning() << "快遥XML文件不存在：" << fastXmlPath;
+    }
+    if (!QFile::exists(slowXmlPath)) {
+        qWarning() << "慢遥XML文件不存在：" << slowXmlPath;
+    }
+
+    readTmXML(fastXmlPath);
+    readTmXML_slow(slowXmlPath);
 }
 
 

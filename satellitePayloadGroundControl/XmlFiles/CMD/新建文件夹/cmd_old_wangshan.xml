@@ -1,0 +1,1288 @@
+<?xml version="1.0" encoding="gb2312"?>
+<SYSTEM SYSTEMAttributeNumD="08" SYSTEMSpecificationT="量子中高轨" XMLtypeT="指令模板" SYSTEMCommandNumD="32" SYSTEMCommandByteLenD="255" SingleFrameCodeH="NC" ComplexFrameCodeH="NC" ScheCmdVectorCodeH = "NC">
+	<!--开关控制指令-->
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="开关控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="02" CommandByteLenH="08" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+		<!--paraType:指令类型 paraCode:指令码-->
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+		</CommandPara>
+	
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="加电对象数量" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*20.0" CommandParaDecodeTypeT="x/20.0" CommandParaMinF="1.0" CommandParaMaxF="11.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="个数(默认1个)"  ParaInitCode="1" ParaRawCodeH="14"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="紧急断电" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不启动紧急断电" ParaInitCode="NC" ParaRawCodeH="30C3"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="启动紧急断电" ParaInitCode="NC" ParaRawCodeH="303C"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="加电对象" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="10"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="A_12V/105V开关" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电机电源开关" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="相机电源开关" ParaInitCode="NC" ParaRawCodeH="63"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="光处理机电源开关" ParaInitCode="NC" ParaRawCodeH="66"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="解锁机构1解锁开关" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="CJ1开关" ParaInitCode="NC" ParaRawCodeH="96"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="波片初始化" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="波片开关" ParaInitCode="NC" ParaRawCodeH="C6"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="滤光片初始化" ParaInitCode="NC" ParaRawCodeH="C7"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="滤光片开关" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="快门初始化" ParaInitCode="NC" ParaRawCodeH="C9"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="快门开关" ParaInitCode="NC" ParaRawCodeH="60"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="加电方式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源开/A高B低" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源关/B高A低/初始化" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="相机电源开关" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="633C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="63C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="A_12V/105V" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="363C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="36C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="电机电源" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="393C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="39C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="相机" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="633C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="63C3"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="相机" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="663C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="66C3"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="CJ1" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电源关" ParaInitCode="NC" ParaRawCodeH="963C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="电源开" ParaInitCode="NC" ParaRawCodeH="96C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="波片初始化" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="A高B低" ParaInitCode="NC" ParaRawCodeH="C33C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="B高A低" ParaInitCode="NC" ParaRawCodeH="C3C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="波片开关" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="A高B低" ParaInitCode="NC" ParaRawCodeH="C63C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="B高A低" ParaInitCode="NC" ParaRawCodeH="C6C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="快门初始化" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="A高B低" ParaInitCode="NC" ParaRawCodeH="C93C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="B高A低" ParaInitCode="NC" ParaRawCodeH="C9C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="快门切换" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="A高B低" ParaInitCode="NC" ParaRawCodeH="603C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="B高A低" ParaInitCode="NC" ParaRawCodeH="60C3"></Para>
+		</CommandPara>
+	</Command>
+
+	<!--光处理机指令-->
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="光处理机指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="73" CommandTimeD="0" CommandParamNumD="13" CommandParamByteLenH="2B" CommandByteLenH="2B"  FrameHeader = "EB95003808000000000041" paraCode = "73" >
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="指令数量" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*40.0/1.0" CommandParaDecodeTypeT="x/40*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="指令数量"  ParaInitCode="1" ParaRawCodeH="28"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#1延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#1延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#2延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#2延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#3延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#3延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#4延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#4延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#5延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#5延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="CMD#6延时时间秒" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CMD#6延时时间秒"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制地址" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0000" ParaInitCode="NC" ParaRawCodeH="0000"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0001" ParaInitCode="NC" ParaRawCodeH="0001"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="0002" ParaInitCode="NC" ParaRawCodeH="0002"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="0003" ParaInitCode="NC" ParaRawCodeH="0003"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="0004" ParaInitCode="NC" ParaRawCodeH="0004"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="0005" ParaInitCode="NC" ParaRawCodeH="0005"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="0006" ParaInitCode="NC" ParaRawCodeH="0006"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="0007" ParaInitCode="NC" ParaRawCodeH="0007"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="0008" ParaInitCode="NC" ParaRawCodeH="0008"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="0009" ParaInitCode="NC" ParaRawCodeH="0009"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="000A" ParaInitCode="NC" ParaRawCodeH="000A"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="000B" ParaInitCode="NC" ParaRawCodeH="000B"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="000C" ParaInitCode="NC" ParaRawCodeH="000C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="000D" ParaInitCode="NC" ParaRawCodeH="000D"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="000E" ParaInitCode="NC" ParaRawCodeH="000E"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="000F" ParaInitCode="NC" ParaRawCodeH="000F"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="0010" ParaInitCode="NC" ParaRawCodeH="0010"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="0011" ParaInitCode="NC" ParaRawCodeH="0011"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="0012" ParaInitCode="NC" ParaRawCodeH="0012"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="0013" ParaInitCode="NC" ParaRawCodeH="0013"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制数据" CommandParaByteLengthD="4" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="控制数据" ParaInitCode="NC" ParaRawCodeH="FFFFFFFF"></Para>
+		</CommandPara>
+	</Command>	
+
+	<!--限位控制指令-->		
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="限位控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="26" CommandTimeD="0" CommandParamNumD="7" CommandParamByteLenH="0D" CommandByteLenH="13" FrameHeader = "EB95002608000000000041" paraCode = "26" >
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="AZ转动角度限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-90.0" ParaRawCodeH="4000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="AZ转动角度限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="90.0" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="AZ转动速度限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-5.0" ParaRawCodeH="7C72"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="AZ转动速度限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="5.0" ParaRawCodeH="838E"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="AZ转动功率限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/10.0+32768" CommandParaDecodeTypeT="(x-32768)*1.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-0.4" ParaRawCodeH="75C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ转动功率限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/10.0+32768" CommandParaDecodeTypeT="(x-32768)*1.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="0.4" ParaRawCodeH="8A3D"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="EL转动角度限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-90.0" ParaRawCodeH="4000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="EL转动角度限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="90.0" ParaRawCodeH="C000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="EL转动速度限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-5.0" ParaRawCodeH="7C72"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="EL转动速度限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="5.0" ParaRawCodeH="838E"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="EL转动功率限位下限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/10.0+32768" CommandParaDecodeTypeT="(x-32768)*1.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MIN"  ParaInitCode="-0.4" ParaRawCodeH="75C3"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL转动功率限位上限" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/10.0+32768" CommandParaDecodeTypeT="(x-32768)*1.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="MAX"  ParaInitCode="0.4" ParaRawCodeH="8A3D"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+	</Command>
+
+	<!--转台控制指令-->
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="转台控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="02" CommandByteLenH="08" FrameHeader = "EB95002808000000000041" paraCode = "2A" >
+		
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="控制模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪控制关闭模式" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="定位指向模式" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="粗跟踪模式" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="卸载跟踪模式" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="精跟踪模式(测试)" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="指向数据源选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="10"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="利用指令定位值指向" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="利用指向角计算指向" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="使用系统默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="精抖扫使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不扫描" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="扫描开启" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="扫描使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不扫描" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="螺旋扫描" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="螺旋扫描2" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="扫描半径R(mrad)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x*/10.0" CommandParaMinF="0.0" CommandParaMaxF="20.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="扫描半径R(mrad)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="扫描速率V(mrad/s)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x/10.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="扫描速率V(mrad/s)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="扫描步距pr(mrad)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000.0" CommandParaDecodeTypeT="x/1000.0" CommandParaMinF="0.0" CommandParaMaxF="2.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="扫描步距pr(mrad)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="跳步使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="3" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不跳步" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="定点跳步" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="矩形跳步" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="跳步范围D(mrad)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0" CommandParaDecodeTypeT="x*/1.0" CommandParaMinF="0.0" CommandParaMaxF="20.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跳步范围D(mrad)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="跳步周期T(s)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x/10.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跳步周期T(s)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="跳步步距r(mrad)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x/10.0" CommandParaMinF="0.0" CommandParaMaxF="2.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跳步步距r(mrad)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="AZ零位偏置角度" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ零位偏置角度"  ParaInitCode="179.99" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="EL零位偏置角度" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/360.0+32768" CommandParaDecodeTypeT="(x-32768)*360.0/65536" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL零位偏置角度"  ParaInitCode="179.99" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="AZ定位角度" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*16777216/360.0+8388608" CommandParaDecodeTypeT="(x-8388608)*360.0/16777216" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ定位角度"  ParaInitCode="-179.99" ParaRawCodeH="FFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="AZ定位角度" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*16777216/360.0+8388608" CommandParaDecodeTypeT="(x-8388608)*360.0/16777216" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ定位角度"  ParaInitCode="-179.99" ParaRawCodeH="FFFFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="X方向跟踪中心" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*32.0" CommandParaDecodeTypeT="x/32.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="X方向跟踪中心"  ParaInitCode="179.99" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="Y方向跟踪中心" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*32.0" CommandParaDecodeTypeT="x/32.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="Y方向跟踪中心"  ParaInitCode="-179.99" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+	</Command>
+
+	<!--PID参数配置指令-->
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="PID参数配置指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="22" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="02" CommandByteLenH="08" FrameHeader = "EB95003208000000000041" paraCode = "2C" >
+		
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="25"></Para>
+		</CommandPara>
+
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ位置环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ位置环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ位置环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ位置环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ位置环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ位置环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ速度环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ速度环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ速度环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ速度环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ速度环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ速度环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ电流环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ电流环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ电流环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ电流环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="AZ电流环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ电流环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL位置环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL位置环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL位置环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL位置环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL位置环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL位置环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL速度环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL速度环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL速度环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL速度环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL速度环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL速度环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL电流环比例项Kp" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL电流环比例项Kp"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL电流环积分项Ki" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL电流环积分项Ki"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="EL电流环微分项Kd" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0/1.0" CommandParaDecodeTypeT="x/100.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL电流环微分项Kd"  ParaInitCode="655.35" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x/1.0*1.0" CommandParaMinF="-180.0" CommandParaMaxF="180.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+
+	</Command>
+
+	<!--粗跟踪模式控制指令-->
+	<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="粗跟踪模式控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="2A" CommandTimeD="0" CommandParamNumD="11" CommandParamByteLenH="11" CommandByteLenH="17"  FrameHeader = "EB90002608000000000041" paraCode = "22" >
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="粗跟踪的工作模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="5" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="粗跟踪关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="粗跟踪控制开环指向" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="粗跟踪控制跟踪模式" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="跟踪捕获跟踪模式" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="精跟踪模式" ParaInitCode="NC" ParaRawCodeH="3B"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="数据源选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="利用指向值指向" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="利用轨道数据指向" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="闭环相机选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="小视场相机" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="大视场相机" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="扫描使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="3" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不扫描" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="扫描" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="跳步" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="扫描半径（毫弧度）" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x*10.0" CommandParaMinF="0.0" CommandParaMaxF="20.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：秒)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="扫描速率(毫弧度/秒)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10.0" CommandParaDecodeTypeT="x*10.0" CommandParaMinF="0.0" CommandParaMaxF="26.5">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="扫描步距(毫弧度)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*100.0" CommandParaDecodeTypeT="x*100.0" CommandParaMinF="0.0" CommandParaMaxF="2.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：步)"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="9" CommandParaSpecificationT="粗跟踪方位指向角" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x+180.0)/360.0*(16777216)" CommandParaDecodeTypeT="x*360/(16777216) - 180.0" CommandParaMinF="-175.0" CommandParaMaxF="175.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="800000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqNum="10" CommandParaSpecificationT="粗跟踪俯仰指向角" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x+180.0)/360.0*(16777216)" CommandParaDecodeTypeT="x*360/(16777216) - 180.0" CommandParaMinF="-175.0" CommandParaMaxF="175.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="800000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqNum="11" CommandParaSpecificationT="跟踪中心X" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/2048" CommandParaDecodeTypeT="x*2048/65536" CommandParaMinF="0.0" CommandParaMaxF="2048.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心坐标(单位：像素)"  ParaInitCode="512" ParaRawCodeH="4000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqNum="12" CommandParaSpecificationT="跟踪中心Y" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/2048" CommandParaDecodeTypeT="x*2048/65536" CommandParaMinF="0.0" CommandParaMaxF="2048.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心坐标(单位：像素)"  ParaInitCode="512" ParaRawCodeH="4000"></Para>
+		</CommandPara>
+	</Command> -->
+
+	<!--压电控制指令-->	
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="2" CommandSpecificationT="压电控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="2F" CommandTimeD="0" CommandParamNumD="13" CommandParamByteLenH="17" CommandByteLenH="1D"  FrameHeader = "EB95002608000000000041" paraCode = "2F" >
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="控制对象" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="4" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="精跟踪压电" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="超前压电" ParaInitCode="NC" ParaRawCodeH="5A"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="工作模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="4" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="开环模式" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="无超前跟踪" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="带超前跟踪" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="闭环模式" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="使用默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="定位X轴方向标定" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="4" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心X正方向" ParaInitCode="NC" ParaRawCodeH="63"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="质心X负方向" ParaInitCode="NC" ParaRawCodeH="66"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="质心Y正方向" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="质心Y负方向" ParaInitCode="NC" ParaRawCodeH="6C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="使用默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="定位Y轴方向标定" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="3" CommandParamParaNumD="4" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心X正方向" ParaInitCode="NC" ParaRawCodeH="63"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="质心X负方向" ParaInitCode="NC" ParaRawCodeH="66"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="质心Y正方向" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="质心Y负方向" ParaInitCode="NC" ParaRawCodeH="6C"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="使用默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="跟踪位置X" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*32" CommandParaDecodeTypeT="x/32" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪点X(单位：像素)"  ParaInitCode="2047.96" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="跟踪位置Y" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*32" CommandParaDecodeTypeT="x/32" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪点Y(单位：像素)"  ParaInitCode="2047.96" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="定位位置X" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/6" CommandParaDecodeTypeT="x*6/32768" CommandParaMinF="0.0" CommandParaMaxF="5.95">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="定位点X(单位:V)"  ParaInitCode="5.99991" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="定位位置Y" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/6" CommandParaDecodeTypeT="x*6/65536" CommandParaMinF="0.0" CommandParaMaxF="5.95">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="定位点Y(单位:V)"  ParaInitCode="5.99991" ParaRawCodeH="FFFF"></Para>
+		</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="7" CommandParaSpecificationT="X轴K0" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="x_K0(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="8" CommandParaSpecificationT="X轴K1" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="x_K1(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="9" CommandParaSpecificationT="X轴K2" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="x_K2(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="10" CommandParaSpecificationT="y轴K0" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="y_K0(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="11" CommandParaSpecificationT="y轴K1" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="y_K1(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="12" CommandParaSpecificationT="y轴K2" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1" CommandParaDecodeTypeT="x*1" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="y_K2(单位：无)"  ParaInitCode="1.99997" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			</CommandPara>
+	</Command>
+			
+	
+	<!--指向角计算控制指令-->				
+	<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="指向角计算控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="36" CommandTimeD="0" CommandParamNumD="9" CommandParamByteLenH="0E" CommandByteLenH="14" FrameHeader = "EB95003608000000000041" paraCode = "30" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="计算模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="2" CommandParamParaNumD="02"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="指向角计算关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="利用注入曲线计算指向角" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="利用姿轨播报计算指向角(默认)" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="使用系统默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="姿态数据源选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="7" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="星敏A播报姿态数据" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="星敏B播报姿态数据" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="混合星敏播报姿态数据" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="使用系统默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[0][0]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[0][0]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[0][1]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[0][1]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[0][2]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[0][2]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[1][0]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[1][0]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[1][1]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[1][1]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[1][2]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[1][2]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[2][0]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[2][0]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[2][1]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[2][1]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="安装修正矩阵参数[2][2]" CommandParaByteLengthD="3" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x + 1)*10000" CommandParaDecodeTypeT="(x/10000) - 1" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="安装修正矩阵参数[2][2]"  ParaInitCode="15.777215" ParaRawCodeH="FFFFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="超前瞄准标定矩阵参数[0][0]" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000000+32768" CommandParaDecodeTypeT="(x-32768)/1000000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="超前瞄准标定矩阵参数[0][0]"  ParaInitCode="0.032767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="超前瞄准标定矩阵参数[0][1]" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000000+32768" CommandParaDecodeTypeT="(x-32768)/1000000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="超前瞄准标定矩阵参数[0][1]"  ParaInitCode="0.032767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="超前瞄准标定矩阵参数[1][0]" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000000+32768" CommandParaDecodeTypeT="(x-32768)/1000000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="超前瞄准标定矩阵参数[1][0]"  ParaInitCode="0.032767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="超前瞄准标定矩阵参数[1][1]" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000000+32768" CommandParaDecodeTypeT="(x-32768)/1000000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="超前瞄准标定矩阵参数[1][1]"  ParaInitCode="0.032767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="望远镜增益" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1000" CommandParaDecodeTypeT="x/1000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="望远镜增益"  ParaInitCode="65.535" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="日凌规避开关" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="3" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="规避使能关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="规避使能开启" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="使用系统默认参数" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="日凌规避角度" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10" CommandParaDecodeTypeT="x/00" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="日凌规避角度"  ParaInitCode="25.5" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+	</Command>
+		
+	<!--数传控制指令-->			
+		<Command CommandAttributeNumD="10" CommandSeqIdxD="4" CommandSpecificationT="数传控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="34" CommandTimeD="0" CommandParamNumD="7" CommandParamByteLenH="0A" CommandByteLenH="10" FrameHeader = "EB95003008000000000041" paraCode = "33" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="数据传输控制指令" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="3" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数据接收开始指令" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="数据接收停止指令" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="数据下传开始指令" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="数据传输工作模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="直接传输模式" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="存储转发模式" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="数据传输选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="12" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪数据包" ParaInitCode="NC" ParaRawCodeH="A9"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="精相机图像" ParaInitCode="NC" ParaRawCodeH="A6"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="跟踪数据包+精相机" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="传输数据禁止" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="主备通道选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="通道A" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="通道B" ParaInitCode="NC" ParaRawCodeH="39"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数据包总包数" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="65535.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数据包总包数(单位：包)"  ParaInitCode="0" ParaRawCodeH="0000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="保留" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="65535.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="65535" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="图像数据包标识" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="图像数据包标识" ParaInitCode="NC" ParaRawCodeH="0D03"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="跟踪数据包标识" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪数据包标识" ParaInitCode="NC" ParaRawCodeH="0D2C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="数传数据数量" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="00" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="01" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="02" ParaInitCode="NC" ParaRawCodeH="02"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="03" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="04" ParaInitCode="NC" ParaRawCodeH="04"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="05" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="06" ParaInitCode="NC" ParaRawCodeH="06"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="07" ParaInitCode="NC" ParaRawCodeH="07"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="08" ParaInitCode="NC" ParaRawCodeH="08"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="09" ParaInitCode="NC" ParaRawCodeH="09"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="0A" ParaInitCode="NC" ParaRawCodeH="0A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="0B" ParaInitCode="NC" ParaRawCodeH="0B"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="0C" ParaInitCode="NC" ParaRawCodeH="0C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="0D" ParaInitCode="NC" ParaRawCodeH="0D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="0E" ParaInitCode="NC" ParaRawCodeH="0E"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="0F" ParaInitCode="NC" ParaRawCodeH="0F"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="10" ParaInitCode="NC" ParaRawCodeH="10"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="11" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="12" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="13" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="数传数据1" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="20" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="系统时间s" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="系统时间ms+跟踪状态" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="精跟踪压电反馈电压" ParaInitCode="NC" ParaRawCodeH="02"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="超前压电反馈电压" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="精相机反馈质心" ParaInitCode="NC" ParaRawCodeH="0C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="精相机灰度值" ParaInitCode="NC" ParaRawCodeH="0D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="精相机超阈值点+曝光时间" ParaInitCode="NC" ParaRawCodeH="0E"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="精相机灰度累加和" ParaInitCode="NC" ParaRawCodeH="0F"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="姿轨数据对应时间" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="本星位置X(m)" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="本星位置Y(m)" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="本星位置Z(m)" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="本星速度X(m/s)" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="本星速度Y(m/s)" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="本星速度Z(m/s)" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="本星滚动角X(rad)" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="本星俯仰角Y(rad)" ParaInitCode="NC" ParaRawCodeH="1C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="本星偏航角Z(rad)" ParaInitCode="NC" ParaRawCodeH="1D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="目标位置X(m)" ParaInitCode="NC" ParaRawCodeH="1E"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="目标位置Y(m)" ParaInitCode="NC" ParaRawCodeH="1F"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="20" ParaSpecificationT="目标位置Z(m)" ParaInitCode="NC" ParaRawCodeH="20"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="21" ParaSpecificationT="目标速度X(m/s)" ParaInitCode="NC" ParaRawCodeH="21"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="22" ParaSpecificationT="目标速度Y(m/s)" ParaInitCode="NC" ParaRawCodeH="22"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="23" ParaSpecificationT="目标速度Z(m/s)" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="24" ParaSpecificationT="计算角度AZ" ParaInitCode="NC" ParaRawCodeH="24"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="25" ParaSpecificationT="计算角度EL" ParaInitCode="NC" ParaRawCodeH="25"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="26" ParaSpecificationT="计算超前电压FX" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="27" ParaSpecificationT="计算超前电压FY" ParaInitCode="NC" ParaRawCodeH="27"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="28" ParaSpecificationT="扫描角度AZ" ParaInitCode="NC" ParaRawCodeH="28"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="29" ParaSpecificationT="扫描角度EL" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="30" ParaSpecificationT="跳步角度AZ" ParaInitCode="NC" ParaRawCodeH="2A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="31" ParaSpecificationT="跳步角度EL" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="32" ParaSpecificationT="预指向角AZ" ParaInitCode="NC" ParaRawCodeH="2C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="33" ParaSpecificationT="预指向角EL" ParaInitCode="NC" ParaRawCodeH="2D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="34" ParaSpecificationT="反馈角度AZ" ParaInitCode="NC" ParaRawCodeH="2E"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="35" ParaSpecificationT="反馈角度EL" ParaInitCode="NC" ParaRawCodeH="2F"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="36" ParaSpecificationT="反馈速度AZ" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="37" ParaSpecificationT="反馈速度EL" ParaInitCode="NC" ParaRawCodeH="31"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="38" ParaSpecificationT="反馈电流AZ" ParaInitCode="NC" ParaRawCodeH="32"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="39" ParaSpecificationT="反馈电流EL" ParaInitCode="NC" ParaRawCodeH="33"></Para>							
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据2" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据2"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据3" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据3"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据4" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据4"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据5" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据5"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据6" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据6"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据7" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据7"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据8" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据8"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据9" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据9"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据10" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据10"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据11" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据11"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据12" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据12"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据13" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据13"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据14" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据14"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据15" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据15"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据16" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据16"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据17" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据17"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据18" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据18"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据19" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据19"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="数传数据20" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1/1" CommandParaDecodeTypeT="x*1/1" CommandParaMinF="0.0" CommandParaMaxF="51">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="数传数据20"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="数传数据频率" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="05"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="40Hz" ParaInitCode="NC" ParaRawCodeH="53"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="2kHz" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="10kHz" ParaInitCode="NC" ParaRawCodeH="5C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="1" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			</CommandPara>
+		</Command>
+
+	<!--相机控制指令-->	
+		<Command CommandAttributeNumD="10" CommandSeqIdxD="9" CommandSpecificationT="相机控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="2C" CommandTimeD="0" CommandParamNumD="7" CommandParamByteLenH="0D" CommandByteLenH="13" FrameHeader = "EB95001E08000000000041" paraCode = "36" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="帧头/功能标识" CommandParaByteLengthD="3" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="05"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="B9E02C" ParaInitCode="NC" ParaRawCodeH="B9E02C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="相机工作模式设置1" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="24" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="高增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="中增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="低增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="95"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="近似低增益+不进行自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="D5"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="高增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="25"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="中增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="65"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="低增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="A5"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="近似低增益+自适应曝光+不定点剔除坏点，使用中心位置" ParaInitCode="NC" ParaRawCodeH="E5"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="高增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="中增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="59"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="低增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="99"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="近似低增益+不进行自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="D9"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="高增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="中增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="低增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="A9"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="近似低增益+自适应曝光+定点剔除坏点，不使用中心位置" ParaInitCode="NC" ParaRawCodeH="E9"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="16" ParaSpecificationT="高增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="1D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="17" ParaSpecificationT="中增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="5D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="18" ParaSpecificationT="低增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="9D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="19" ParaSpecificationT="近似低增益+不进行自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="DD"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="20" ParaSpecificationT="高增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="2D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="21" ParaSpecificationT="中增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="6D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="22" ParaSpecificationT="低增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="AD"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="23" ParaSpecificationT="近似低增益+自适应曝光+删除定点剔除的坏点坐标" ParaInitCode="NC" ParaRawCodeH="ED"></Para>
+			</CommandPara>
+
+			<!--参数组2 开窗大小-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="开窗大小" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x/8" CommandParaDecodeTypeT="x*8" CommandParaMinF="64" CommandParaMaxF="512">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="开窗大小(单位：像素)"  ParaInitCode="512" ParaRawCodeH="40"></Para>
+			</CommandPara>
+
+			<!--参数组3 开窗中心位置(X方向)-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="开窗中心/坏点位置X" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="512">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="开窗中心/坏点位置X" ParaInitCode="320" ParaRawCodeH="0140"></Para>
+			</CommandPara>
+
+			<!--参数组4 开窗中心位置(Y方向)-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="开窗中心/坏点位置Y" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="512">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="开窗中心/坏点位置Y" ParaInitCode="256" ParaRawCodeH="0100"></Para>
+			</CommandPara>
+
+			<!--参数组5 坏点判断阈值-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="坏点阈值" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="16320">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="坏点阈值"  ParaInitCode="32" ParaRawCodeH="20"></Para>
+			</CommandPara>
+
+			<!--参数组6 积分时间-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="积分时间" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="65534">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="积分时间"  ParaInitCode="300" ParaRawCodeH="012C"></Para>
+			</CommandPara>
+
+			<!--参数组7 质心判断阈值-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="7" CommandParaSpecificationT="质心阈值" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="16320">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心阈值"  ParaInitCode="40" ParaRawCodeH="28"></Para>
+			</CommandPara>
+
+			<!--参数组8 图像传输间隔-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="8" CommandParaSpecificationT="图像传输间隔" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="255">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="图像传输间隔"  ParaInitCode="10" ParaRawCodeH="0A"></Para>
+			</CommandPara>
+
+			<!--参数组9 质心频率-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="9" CommandParaSpecificationT="质心频率" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x" CommandParaDecodeTypeT="x" CommandParaMinF="1" CommandParaMaxF="512">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="质心频率"  ParaInitCode="512" ParaRawCodeH="0200"></Para>
+			</CommandPara>
+
+			<!--参数组10 图像传输控制-->
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="9" CommandParaSpecificationT="图像传输控制" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="1" CommandParamParaNumD="2"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="图像传输启动" ParaInitCode="NC" ParaRawCodeH="07"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="图像传输停止" ParaInitCode="NC" ParaRawCodeH="70"></Para>
+			</CommandPara>
+		</Command>
+
+	
+	<!--粗跟踪控制参数调整-->		
+		<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="9" CommandSpecificationT="粗跟踪控制参数调整" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="2C" CommandTimeD="0" CommandParamNumD="7" CommandParamByteLenH="0D" CommandByteLenH="13" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="环路选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="05"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="电流环" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="速度环" ParaInitCode="NC" ParaRawCodeH="26"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="位置环跟踪" ParaInitCode="NC" ParaRawCodeH="29"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="位置环捕获" ParaInitCode="NC" ParaRawCodeH="2A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="位置环指向" ParaInitCode="NC" ParaRawCodeH="2C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="方位轴KP" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ_KP"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="方位轴KI" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ_KI"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="方位轴KD" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="AZ_KD"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="俯仰轴KP" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL_KP"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="俯仰轴KI" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL_KI"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="俯仰轴KD" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*65536/200.0" CommandParaDecodeTypeT="x*200.0/65536" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="EL_KD"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+		</Command> -->
+		
+
+		
+	<!--温度控制指令-->	
+		<Command CommandAttributeNumD="10" CommandSeqIdxD="0" CommandSpecificationT="温度控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="42" CommandTimeD="0" CommandParamNumD="6" CommandParamByteLenH="08" CommandByteLenH="0E" FrameHeader = "EB95001608000000000041" paraCode = "42" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="09"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="模式选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="06"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置模式" ParaInitCode="NC" ParaRawCodeH="8C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="温控开启" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="温控禁止" ParaInitCode="NC" ParaRawCodeH="CC"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="正常模式" ParaInitCode="NC" ParaRawCodeH="63"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="过渡模式" ParaInitCode="NC" ParaRawCodeH="69"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="存储模式" ParaInitCode="NC" ParaRawCodeH="6C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="通路选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="16" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="CH00" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="CH01" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="CH02" ParaInitCode="NC" ParaRawCodeH="02"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="CH03" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="CH04" ParaInitCode="NC" ParaRawCodeH="04"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="CH05" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="CH06" ParaInitCode="NC" ParaRawCodeH="06"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="CH07" ParaInitCode="NC" ParaRawCodeH="07"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="CH08" ParaInitCode="NC" ParaRawCodeH="08"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="CH09" ParaInitCode="NC" ParaRawCodeH="09"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="CH0A" ParaInitCode="NC" ParaRawCodeH="0A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="CH0B" ParaInitCode="NC" ParaRawCodeH="0B"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="CH0C" ParaInitCode="NC" ParaRawCodeH="0C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="CH0D" ParaInitCode="NC" ParaRawCodeH="0D"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="CH0E" ParaInitCode="NC" ParaRawCodeH="0E"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="15" ParaSpecificationT="CH0F" ParaInitCode="NC" ParaRawCodeH="0F"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="闭环选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="02"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="闭环模式" ParaInitCode="NC" ParaRawCodeH="41"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="开环模式" ParaInitCode="NC" ParaRawCodeH="81"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="01"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="温控低值" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(5013.9*math.exp(4100*(1/(x+273.15)-1/298.15)))/((5013.9*math.exp(4100*(1/(x+273.15)-1/298.15))) + 6200) *5*4096/5" CommandParaDecodeTypeT="(x-0)*1.0/1" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="摄氏度"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="温控高值" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(5013.9*math.exp(4100*(1/(x+273.15)-1/298.15)))/((5013.9*math.exp(4100*(1/(x+273.15)-1/298.15))) + 6200) *5*4096/5" CommandParaDecodeTypeT="(x-0)*1.0/1" CommandParaMinF="0.0" CommandParaMaxF="200.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="摄氏度"  ParaInitCode="NC" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="01"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+		</Command>
+		
+	<!--模式切换指令-->		
+		<Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="模式切换指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="06" CommandByteLenH="0C" FrameHeader = "EB95001E08000000000041" paraCode = "55" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="模式选择" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="热保持模式" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="建链模式" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="恒星标校模式" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="光轴标校模式" ParaInitCode="NC" ParaRawCodeH="39"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="精抖扫使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不扫描" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="扫描开启" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="扫描使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不扫描" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="螺旋扫描" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="螺旋扫描2" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="跳步使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不跳步" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="定点跳步" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="矩形跳步" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="跳步使能" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="不通信(LDPC 629M)数据" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="通信LDPC 629M数据" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="通信LDPC 314M数据" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="通信RS 625M数据" ParaInitCode="NC" ParaRawCodeH="39"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="通信RS 312.5M数据" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="光处理机一级泵配置" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="模式1" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="模式2" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="模式3" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="模式4" ParaInitCode="NC" ParaRawCodeH="39"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="模式5" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="光处理机二级泵配置" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="0.2W数据" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="0.5W数据" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="1W数据" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="2W数据(33.1dBm)" ParaInitCode="NC" ParaRawCodeH="39"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="2W数据(33.0dBm)" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="2.5W数据" ParaInitCode="NC" ParaRawCodeH="C0"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="其他" ParaInitCode="NC" ParaRawCodeH="C3"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="光处理机低噪放配置" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="模式1" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="模式2" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="模式3" ParaInitCode="NC" ParaRawCodeH="36"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="模式4" ParaInitCode="NC" ParaRawCodeH="39"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="模式5" ParaInitCode="NC" ParaRawCodeH="3C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="星敏滚动角X偏差" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10000+32768" CommandParaDecodeTypeT="(x-32768)/10000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="星敏滚动角X偏差"  ParaInitCode="3.2767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="星敏俯仰角Y偏差" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10000+32768" CommandParaDecodeTypeT="(x-32768)/10000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="星敏俯仰角Y偏差"  ParaInitCode="3.2767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="星敏偏航角Z偏差" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10000+32768" CommandParaDecodeTypeT="(x-32768)/10000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="星敏偏航角Z偏差"  ParaInitCode="3.2767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="星敏数据时间偏差" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*10000+32768" CommandParaDecodeTypeT="(x-32768)/10000" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="星敏数据时间偏差"  ParaInitCode="3.2767" ParaRawCodeH="FFFF"></Para>
+			</CommandPara>
+
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="保留" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="0" CommandParaMaxF="0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="0" ParaRawCodeH="00"></Para>
+			</CommandPara>
+		</Command>
+
+	<!--发射调制控制指令-->		
+		<Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="发射调制控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="06" CommandByteLenH="0C" FrameHeader = "EB95001208000000000041" paraCode = "58" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="调制控制开关" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="调制控制关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="调制控制开启" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="使用默认值" ParaInitCode="NC" ParaRawCodeH="FF"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="发射编码方式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="RS编码" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="LDPC编码" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="使用默认值" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="4" CommandParaSpecificationT="通信速率设置" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="625Mbps" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="312.5Mbps" ParaInitCode="NC" ParaRawCodeH="33"></Para>	
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="使用默认值" ParaInitCode="NC" ParaRawCodeH="FF"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="5" CommandParaSpecificationT="跟踪稳定时间阈值(s)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0" CommandParaDecodeTypeT="x/1.0" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="跟踪稳定时间阈值(s)"  ParaInitCode="60" ParaRawCodeH="3C"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="6" CommandParaSpecificationT="掉出跟踪时间阈值(ms)" CommandParaByteLengthD="1" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0" CommandParaDecodeTypeT="x/1.0" CommandParaMinF="0.0" CommandParaMaxF="1023.0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="掉出跟踪时间阈值(ms)"  ParaInitCode="10" ParaRawCodeH="0A"></Para>
+			</CommandPara>
+		</Command>
+
+	<!--星敏遥控指令-->		
+		<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="星敏遥控指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="2" CommandParamByteLenH="06" CommandByteLenH="0C" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="遥控类型" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="04"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="复位" ParaInitCode="NC" ParaRawCodeH="A151"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="自检" ParaInitCode="NC" ParaRawCodeH="A11A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="进入待机模式" ParaInitCode="NC" ParaRawCodeH="1A01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="进入姿态测量模式" ParaInitCode="NC" ParaRawCodeH="1A10"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="保留" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="0" CommandParaMaxF="0">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="保留"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+		</Command> -->
+		
+	<!--星敏时间设置-->		
+		<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="星敏时间设置" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="3" CommandParamByteLenH="08" CommandByteLenH="0E" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="时间设置标识" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="01"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间设置标识" ParaInitCode="NC" ParaRawCodeH="5374"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="2" CommandParaSpecificationT="时间秒设置" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="0" CommandParaMaxF="4294967295">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间：秒"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="3" CommandParaSpecificationT="时间毫秒设置" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="0" CommandParaMaxF="999">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间：毫秒"  ParaInitCode="0" ParaRawCodeH="0000"></Para>
+			</CommandPara>
+		</Command>	 -->
+		
+	<!--星敏参数配置-->		
+		<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="星敏参数配置" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="4" CommandParamByteLenH="06" CommandByteLenH="0C" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数配置标识" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="01"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数配置标识" ParaInitCode="NC" ParaRawCodeH="1415"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数类型" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="0F"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置曝光时间(毫秒)" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="设置全天模式灰度阈值" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="设置增益" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="设置星点像素个数范围" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="软件参数1" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="软件参数2" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="软件参数3" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="软件参数4" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="软件参数5" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="软件参数6" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="软件参数7" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="软件参数8" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="软件参数9" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="软件参数10" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="软件参数11" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数值" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="0" CommandParaMaxF="65535">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数值"  ParaInitCode="0" ParaRawCodeH="0000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数写入位置" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="02"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="写入RAM" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="写入FLASH" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+			</CommandPara>
+		</Command>		 -->
+		
+	<!--星敏参数下传-->		
+		<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="星敏参数下传" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="8D" CommandTimeD="0" CommandParamNumD="5" CommandParamByteLenH="06" CommandByteLenH="0C" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数下传标识" CommandParaByteLengthD="2" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="01"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数下传标识" ParaInitCode="NC" ParaRawCodeH="22AA"></Para>	
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数类型" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="0F"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置曝光时间(毫秒)" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="设置全天模式灰度阈值" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="设置增益" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="设置星点像素个数范围" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="软件参数1" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="软件参数2" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="软件参数3" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="软件参数4" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="软件参数5" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="软件参数6" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="软件参数7" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="软件参数8" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="软件参数9" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="软件参数10" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="软件参数11" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数类型" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="0F"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置曝光时间(毫秒)" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="设置全天模式灰度阈值" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="设置增益" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="设置星点像素个数范围" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="软件参数1" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="软件参数2" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="软件参数3" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="软件参数4" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="软件参数5" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="软件参数6" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="软件参数7" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="软件参数8" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="软件参数9" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="软件参数10" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="软件参数11" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数类型" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="0F"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置曝光时间(毫秒)" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="设置全天模式灰度阈值" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="设置增益" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="设置星点像素个数范围" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="软件参数1" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="软件参数2" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="软件参数3" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="软件参数4" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="软件参数5" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="软件参数6" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="软件参数7" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="软件参数8" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="软件参数9" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="软件参数10" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="软件参数11" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+			</CommandPara>
+			<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数类型" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="0F"  CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+				<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="设置曝光时间(毫秒)" ParaInitCode="NC" ParaRawCodeH="01"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="设置全天模式灰度阈值" ParaInitCode="NC" ParaRawCodeH="03"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="2" ParaSpecificationT="设置增益" ParaInitCode="NC" ParaRawCodeH="05"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="3" ParaSpecificationT="设置星点像素个数范围" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="4" ParaSpecificationT="软件参数1" ParaInitCode="NC" ParaRawCodeH="12"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="5" ParaSpecificationT="软件参数2" ParaInitCode="NC" ParaRawCodeH="13"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="6" ParaSpecificationT="软件参数3" ParaInitCode="NC" ParaRawCodeH="14"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="7" ParaSpecificationT="软件参数4" ParaInitCode="NC" ParaRawCodeH="15"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="8" ParaSpecificationT="软件参数5" ParaInitCode="NC" ParaRawCodeH="23"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="9" ParaSpecificationT="软件参数6" ParaInitCode="NC" ParaRawCodeH="16"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="10" ParaSpecificationT="软件参数7" ParaInitCode="NC" ParaRawCodeH="17"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="11" ParaSpecificationT="软件参数8" ParaInitCode="NC" ParaRawCodeH="18"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="12" ParaSpecificationT="软件参数9" ParaInitCode="NC" ParaRawCodeH="19"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="13" ParaSpecificationT="软件参数10" ParaInitCode="NC" ParaRawCodeH="1A"></Para>
+				<Para ParaAttributeNumD="05" ParaSeqIdx="14" ParaSpecificationT="软件参数11" ParaInitCode="NC" ParaRawCodeH="1B"></Para>
+			</CommandPara>
+		</Command>				 -->
+			
+	<!--日凌控制指令-->	
+	<!-- <Command CommandAttributeNumD="10" CommandSeqIdxD="1" CommandSpecificationT="日凌控制指令" CommandSourceT="地检" CommandDestT="工程样机"  CommandCodeH="80" CommandTimeD="0" CommandParamNumD="4" CommandParamByteLenH="7" CommandByteLenH="0D" FrameHeader = "EB90002608000000000041" paraCode = "22" >
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="时间戳" CommandParaByteLengthD="4" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="x*1.0/1.0" CommandParaDecodeTypeT="x*1.0/1.0" CommandParaMinF="-180" CommandParaMaxF="180">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="时间戳(单位:s)"  ParaInitCode="0" ParaRawCodeH="00000000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="1" CommandParaSpecificationT="参数长度" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="参数长度" ParaInitCode="NC" ParaRawCodeH="2B"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="0" CommandParaSpecificationT="粗跟踪的工作模式" CommandParaByteLengthD="1" CommandParamTypeT="COMBOX" CommandParaInitSelectD="0" CommandParamParaNumD="2" CommandParaEncodeTypeT="NC" CommandParaDecodeTypeT="NC" CommandParaMinF="NC" CommandParaMaxF="NC">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="日凌关闭" ParaInitCode="NC" ParaRawCodeH="30"></Para>
+			<Para ParaAttributeNumD="05" ParaSeqIdx="1" ParaSpecificationT="日凌开启" ParaInitCode="NC" ParaRawCodeH="33"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqIdx="9" CommandParaSpecificationT="日凌规避角度" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x+180.0)*65536/360" CommandParaDecodeTypeT="x*360/65536 - 180.0" CommandParaMinF="-175.0" CommandParaMaxF="175.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="8000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqNum="10" CommandParaSpecificationT="太阳俯仰指向角" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x+180.0)*65536/360" CommandParaDecodeTypeT="x*360/65536 - 180.0" CommandParaMinF="-175.0" CommandParaMaxF="175.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="8000"></Para>
+		</CommandPara>
+		<CommandPara CommandParaAttributeNumD="11" CommandParaSeqNum="10" CommandParaSpecificationT="太阳方位指向角" CommandParaByteLengthD="2" CommandParamTypeT="EDIT" CommandParaInitSelectD="NC" CommandParamParaNumD="1" CommandParaEncodeTypeT="(x+180.0)*65536/360" CommandParaDecodeTypeT="x*360/65536 - 180.0" CommandParaMinF="-175.0" CommandParaMaxF="175.0">
+			<Para ParaAttributeNumD="05" ParaSeqIdx="0" ParaSpecificationT="角度(单位：度)"  ParaInitCode="0" ParaRawCodeH="8000"></Para>
+		</CommandPara>
+	</Command> -->
+
+			
+</SYSTEM>

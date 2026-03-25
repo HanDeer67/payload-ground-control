@@ -45,6 +45,16 @@ QByteArray DataTransfer::uintTo_3_Bytes(uint32_t value)
     return arr;
 }
 
+QByteArray DataTransfer::uintTo_4_Bytes(uint32_t value)
+{
+    QByteArray arr;
+    arr.append((value >> 24) & 0xFF);
+    arr.append((value >> 16) & 0xFF);
+    arr.append((value >> 8) & 0xFF);
+    arr.append(value & 0xFF);
+    return arr;
+}
+
 // 符号数转换
 qint64 DataTransfer::convertSigned(quint64 value, int bitWidth)
 {

@@ -1,0 +1,79 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<SIG_CFG>
+<!--
+chno:通道号
+gatevalidt:发送门控有效设置 0:门控低有效,1:门控高有效
+clkdpush:置数时钟沿设置 0:时钟下降沿置数 1:时钟上升沿置数
+clkduty:时钟占空比 1~99
+clkfreq:时钟频率  
+clksatic:无时钟时时钟线状态 0:低,1:高
+datastatic:数据上线前及保持后的状态 0:低电平,1:高电平 2:保持最后一位
+tg2fc:门控到第一个时钟沿的时间(ns) 
+thg:门控到最后一个时钟沿保持时间(ns) 
+td2c:数据置数与时钟置数沿之间的时间(ns) 
+tfd2fc:首数据位上线与第一个时钟置数沿之间的时间(ns) 
+thld:未数据位下线到最后一个时钟置数沿的保持时间(ns) 
+clkalws:时钟是否常有 0:不常有,1:常有
+codetype:发送码型   0x00:RZ,0x01:NRZ,0x02:NRZI,0x03:曼彻斯特
+datawidtht:发送数据单位 0x00:字节,0x01:字,0x02:双字
+bitodert:发送bit顺序 0x00:字节,0x01:字,0x02:双字
+stopmode:停止发送模式 0x00:立即停止,0x01:发送完当前帧停止
+gatevalidr:接收门控有效设置 0x00:门控低有效,0x01:门控高有效
+clkdpull:接收取数时钟沿 0x00:时钟下降沿取数,0x01:时钟上升沿取数
+datawidthr:接收数据单位 0x00:字节,0x01:字,0x02:双字
+bitoderr:接收bit顺序 0x00:低位先,0x01:高位先
+
+二线制配置:
+l2_tsynen:两线发送同步使能
+l2_tsyndata:两线发送同步数据
+l2_rsynheaden:接收数据帧头使能
+l2_rsynhead:接收数据帧头
+l2_rsyntailen:接收数据帧尾使能
+l2_rsyntail:接收数据帧尾
+l2_rfrmlen:接收数据帧帧长度
+l2_rfrmlenbytes:接收数据帧帧长度字节数
+l2_rfrmlenstart:接收数据帧帧长度起始字节位置
+l2_rfrmlenen:接收数据帧帧长度使能
+l2_rsynen:接收数据同步判别使能
+l2_rsyndata:接收数据同步数据
+-->
+<SIG_ITEM>
+<name>信号配置1</name>
+<chno>0</chno>
+<gatevalidt>3</gatevalidt>
+<clkdpush>0</clkdpush>
+<clkduty>50</clkduty>
+<clkfreq>10000000</clkfreq>
+<clksatic>0</clksatic>
+<datastatic>0</datastatic>
+<tg2fc>0</tg2fc>
+<thg>0</thg>
+<td2c>0</td2c>
+<tfd2fc>0</tfd2fc>
+<thld>0</thld>
+<clkalws>0</clkalws>
+<codetype>0</codetype>
+<datawidtht>0</datawidtht>
+<bitodert>1</bitodert>
+<stopmode>0</stopmode>
+<gatevalidr>0</gatevalidr>
+<clkdpull>0</clkdpull>
+<datawidthr>0</datawidthr>
+<bitoderr>1</bitoderr>
+
+<l2_tsynen>1</l2_tsynen>
+<l2_tsyndata>0xeb</l2_tsyndata>
+<l2_rsynheaden>1</l2_rsynheaden>
+<l2_rsynhead>0x1a 0xcf</l2_rsynhead>
+<l2_rsyntailen>1</l2_rsyntailen>
+<l2_rsyntail>0x55 0xaa</l2_rsyntail>
+<l2_rfrmlen>1</l2_rfrmlen>
+<l2_rfrmlenbytes>2</l2_rfrmlenbytes>
+<l2_rfrmlenstart>3</l2_rfrmlenstart>
+<l2_rfrmlenen>1</l2_rfrmlenen>
+<l2_rsynen>1</l2_rsynen>
+<l2_rsyndata>0x55</l2_rsyndata>
+
+</SIG_ITEM>
+
+</SIG_CFG>
