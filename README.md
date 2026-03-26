@@ -7,7 +7,7 @@ Ground Control Software for Commercial Satellite Payload Applications
   <img src="docs/images/1.png" width="1000">
 </p>
 <p align="center">
-  <img src="docs/images/2.png" width="1000">
+  <img src="docs/images/2.2.png" width="1000">
 </p>
 <p align="center">
   <img src="docs/images/3.png" width="1000">
