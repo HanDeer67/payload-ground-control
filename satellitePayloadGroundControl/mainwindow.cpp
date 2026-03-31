@@ -2558,6 +2558,12 @@ MainWindow::MainWindow(QWidget *parent)
             else{
                 ui->plainTextEdit_statusBar_3->appendPlainText("关闭CAN设备成功！");
                 ui->pushButton_openCAN->setText("打开");
+                // 停止遥测请求2026.2.25 解决仇男豪反馈的循环弹出CAN错误的问题
+                tmRequestTimer->stop();
+                ui->pb_begin_request->setText("开始请求");
+                ui->pb_begin_request_slow->setText("开始请求");
+                ui->sb_request_all->setText("快慢遥同时请求");
+                qDebug() << "停止循环发送遥测请求";
             }
         }
         else{

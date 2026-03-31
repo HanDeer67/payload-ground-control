@@ -99,4 +99,5 @@ QByteArray FrameHelper::lenthCodeAssemble(QList<QDomElement> docNodeList,  QStri
 //    QString byteDataSendString = frameHead0 + tempStringData + checkSumString;
    qDebug()<<"byteDataSendString"<<byteDataSendString;
    QByteArray byteDataSend = dataTransfer->string2Bytearray(byteDataSendString);
+   return byteDataSend;
 }
