@@ -21,6 +21,9 @@ public:
     QByteArray uintTo_4_Bytes(uint32_t value);
     qint64 convertSigned(quint64 value, int bitWidth);
 
+    QByteArray uintTo_1_Bytes(uint16_t value);
+    QString decimalToHexSigned(QString str, int bitWidth);
+    QByteArray floatToByteArray(float value, int byteNum);
 private:
     // 私有成员...
 };

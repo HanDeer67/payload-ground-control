@@ -224,7 +224,7 @@ public:
     bool allSend = false;
 
     void sendDataDirect(); // 调试助手页面的CAN页面直接发送数据时调用的函数
-    void sendDataDirectInput(QString textInput, int  identifier);
+    void sendDataDirectInput(QByteArray textInput, int  identifier);
 
 
     void sendDataDirectNew(QByteArray byteDataSend);
@@ -387,6 +387,8 @@ signals:
 
     void openCloseBroadcastSignal(bool openOrClose, double delayTimeUi);
     void updateBroadcastDataSignal(QByteArray data);
+
+    void updateBroadCountSignal(int updateWhichBroadCount);
 
 
 

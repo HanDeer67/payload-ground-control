@@ -59,7 +59,7 @@ MainWindow::MainWindow(QWidget *parent)
     frameHelper = new FrameHelper(this);
 //    listWidgetHelper = new ListWidgetHelper(this);
 
-    /// **********************************界面初始化****************************
+    /// **********************************界面初始化********************************
     setWindowTitle("地检主控程序-P1");
     QIcon iconApp(":/Icon/game_hat_mario_retro_super_video_icon_183171.png");
     setWindowIcon(iconApp);
@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
     setStatusBar(statusBar);
     // 创建标签并设置信息
     QLabel *infoLabel = new QLabel(this);
-    infoLabel->setText("上海国科航星量子科技有限公司 | XuXiaohan | Version 1.0.6.260324 | 2026.3.24");
+    infoLabel->setText("上海国科航星量子科技有限公司 | XuXiaohan | Version 1.0.6.260407 | 2026.04.08");
     // 1.0.4 通过串口II获取红外相机图像 1.0.5 修复xml不匹配等多个问题 260316 广播新增同时发送
     // 1.0.6 遥测xml名称修改无需修改代码并打包发布，只需修改config.ini文件，快遥保持0304版本，慢遥更新到0319版本，18字节的保留变更为17字节，新增1字节的相机温度遥测
     // 2026.03.24新增指令序列码生成功能
@@ -2915,51 +2915,57 @@ MainWindow::MainWindow(QWidget *parent)
     ///********************************广播正式*****************************************
 
     /// ④时间广播
-            canFrameConfig_timeMulticast.priority = 1; // 优先级1
-            canFrameConfig_timeMulticast.srcAddress = 1; // 源节点：星务
-            canFrameConfig_timeMulticast.multicast = 3; //11b  时间广播组播标识11(3)
-            canFrameConfig_timeMulticast.destAdrr = 63; // 目的节点：111111b
-            canFrameConfig_timeMulticast.funCode = 1; // 轮询应答
+    canFrameConfig_timeMulticast.priority = 1; // 优先级1
+    canFrameConfig_timeMulticast.srcAddress = 1; // 源节点：星务
+    canFrameConfig_timeMulticast.multicast = 3; //11b  时间广播组播标识11(3)
+    canFrameConfig_timeMulticast.destAdrr = 63; // 目的节点：111111b
+    canFrameConfig_timeMulticast.funCode = 1; // 轮询应答
 
     /// ⑤姿态组播
-            canFrameConfig_attiBroadcast.priority = 1;// 优先级1
-            canFrameConfig_attiBroadcast.srcAddress = 1;// 源节点：星务
-            canFrameConfig_attiBroadcast.multicast = 1; // 01b
-            canFrameConfig_attiBroadcast.destAdrr = 63; // 111111b
-            canFrameConfig_attiBroadcast.funCode = 1;// 轮询应答
+    canFrameConfig_attiBroadcast.priority = 1;// 优先级1
+    canFrameConfig_attiBroadcast.srcAddress = 1;// 源节点：星务
+    canFrameConfig_attiBroadcast.multicast = 1; // 01b
+    canFrameConfig_attiBroadcast.destAdrr = 63; // 111111b
+    canFrameConfig_attiBroadcast.funCode = 1;// 轮询应答
 
     /// ⑥业务组播
-            canFrameConfig_busiMulticast.priority = 1;// 优先级1
-            canFrameConfig_busiMulticast.srcAddress = 1;// 源节点：星务
-            canFrameConfig_busiMulticast.multicast = 1; // 01b
-            canFrameConfig_busiMulticast.destAdrr = 31; // 011111b
-            canFrameConfig_busiMulticast.funCode = 1;// 轮询应答
+    canFrameConfig_busiMulticast.priority = 1;// 优先级1
+    canFrameConfig_busiMulticast.srcAddress = 1;// 源节点：星务
+    canFrameConfig_busiMulticast.multicast = 1; // 01b
+    canFrameConfig_busiMulticast.destAdrr = 31; // 011111b
+    canFrameConfig_busiMulticast.funCode = 1;// 轮询应答
 
     frmPagesDataBroadcast *broadcastPage = new frmPagesDataBroadcast(this);
     ui->verticalLayout_50->addWidget(broadcastPage);
-    broadcastPage->getSatelliteCheckBox()->setChecked(true);
-    connect(broadcastPage,&frmPagesDataBroadcast::timeBroadcastSignal,this,[=](QString timeBroadcast){
-        qDebug()<<"timeBroadcast"<<timeBroadcast;
+//    broadcastPage->getSatelliteCheckBox()->setChecked(true);
+    connect(broadcastPage,&frmPagesDataBroadcast::timeBroadcastSignal,this,[=](QByteArray timeBroadcast){
+        qDebug()<<"timeBroadcast"<<timeBroadcast.toHex(' ').toUpper();
         int  identifier = 0; // 0表示时间广播
         sendDataDirectInput(timeBroadcast, identifier);
+//        emit updateBroadCountSignal(identifier);
     });
-    connect(broadcastPage,&frmPagesDataBroadcast::attitudeBroadcastSignal,this,[=](QString attitudeBroadcast){
-        qDebug()<<"attitudeBroadcast"<<attitudeBroadcast;
+    connect(broadcastPage,&frmPagesDataBroadcast::attitudeBroadcastSignal,this,[=](QByteArray attitudeBroadcast){
+        qDebug()<<"attitudeBroadcast"<<attitudeBroadcast.toHex(' ').toUpper();
         int  identifier = 1; // 1表示姿控组播
         sendDataDirectInput(attitudeBroadcast, identifier);
+//        emit updateBroadCountSignal(identifier);
     });
-//    connect(broadcastPage,&frmPagesDataBroadcast::sunBroadcastSignal,this,[=](QString sunBroadcast){
-//        qDebug()<<"sunBroadcast"<<sunBroadcast;
-//        int  identifier = 2;
-//        sendDataDirectInput(sunBroadcast,identifier);
-//    });
-    connect(broadcastPage,&frmPagesDataBroadcast::traceBroadcastSignal,this,[=](QString traceBroadcast){
-        qDebug()<<"traceBroadcast"<<traceBroadcast;
+    connect(broadcastPage,&frmPagesDataBroadcast::sunBroadcastSignal,this,[=](QByteArray sunBroadcast){
+        qDebug()<<"sunBroadcast"<<sunBroadcast.toHex(' ').toUpper();
+        int  identifier = 3;// 3表示太阳广播
+        sendDataDirectInput(sunBroadcast,identifier);
+//        emit updateBroadCountSignal(identifier);
+    });
+    connect(broadcastPage,&frmPagesDataBroadcast::traceBroadcastSignal,this,[=](QByteArray traceBroadcast){
+        qDebug()<<"traceBroadcast"<<traceBroadcast.toHex(' ').toUpper();
         int  identifier = 2; // 2表示业务组播
         sendDataDirectInput(traceBroadcast, identifier);
+//        emit updateBroadCountSignal(identifier);
     });
 
-
+    connect(this,&MainWindow::updateBroadCountSignal,broadcastPage,[=](int updateWhichBroadCount){
+        broadcastPage->updateBroadCount(updateWhichBroadCount);
+    });
 
 }
 
@@ -4839,7 +4845,7 @@ void MainWindow::sendDataDirect()
 }
 
 /// 2026.3.18下面这个函数是开发用来发送广播的，输入的文本就是广播的内容，注意，不同的广播内容对应不同的帧格式，所以要根据广播类型配置帧格式ID
-void MainWindow::sendDataDirectInput(QString textData, int identifier)
+void MainWindow::sendDataDirectInput(QByteArray textData, int identifier)
 {
     canFrameConfig tempCanFrameConfig;
 
@@ -4871,6 +4877,15 @@ void MainWindow::sendDataDirectInput(QString textData, int identifier)
             qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
             qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
             break;
+        case 3:
+            qDebug()<<"切换太阳广播帧配置（暂时同时间广播）";
+            tempCanFrameConfig = canFrameConfig_timeMulticast;
+            qDebug()<<"priority"<<tempCanFrameConfig.priority;
+            qDebug()<<"srcAddress"<<tempCanFrameConfig.srcAddress;
+            qDebug()<<"multicast"<<tempCanFrameConfig.multicast;
+            qDebug()<<"destAdrr"<<tempCanFrameConfig.destAdrr;
+            qDebug()<<"funCode"<<tempCanFrameConfig.funCode;
+            break;
         default:
             qDebug()<<"没有找到广播帧标识，切换默认帧配置——时间广播帧配置";
             tempCanFrameConfig = canFrameConfig_timeMulticast;
@@ -4887,31 +4902,24 @@ void MainWindow::sendDataDirectInput(QString textData, int identifier)
         return;
     }
     // 准备数据
-    QString tempStringData = textData;
-    QByteArray byteDataSend = dataTransfer->string2Bytearray(tempStringData);
-    qDebug()<<"CAN byteDataSend.size："<<byteDataSend.size();
+//    QString tempStringData = textData;
+//    QByteArray byteDataSend = dataTransfer->string2Bytearray(tempStringData);
+    qDebug()<<"CAN byteDataSend.size："<<textData.size();
 
-//    qDebug()<<"333***priority"<<tempCanFrameConfig.priority;
-//    qDebug()<<"333***srcAddress"<<tempCanFrameConfig.srcAddress;
-//    qDebug()<<"333***multicast"<<tempCanFrameConfig.multicast;
-//    qDebug()<<"333***destAdrr"<<tempCanFrameConfig.destAdrr;
-//    qDebug()<<"333***funCode"<<tempCanFrameConfig.funCode;
-    auto frames = canFrameHelper->frameCAN(byteDataSend,tempCanFrameConfig);
+    emit updateBroadCountSignal(identifier); // 测试计数
+    auto frames = canFrameHelper->frameCAN(textData,tempCanFrameConfig);
     for(auto &obj : frames)
     {
         int ret = canWorker1->transmit(nDeviceType, nDeviceInd, nCANInd, &obj,1);  // 发送数据，其实就已经写进缓存区了
         if(ret > 0){
             QString byteDataSendSizeString = QString::number(obj.DataLen);
-//                obj.Data
             ui->plainTextEdit_statusBar_3->appendPlainText("数据发送成功，数据长度：" + byteDataSendSizeString + "字节");
             // qDebug() << "CAN 发送成功，字节数：" << byteDataSend.size();
+
         } else {
              qDebug() << "CAN 发送失败";
             ui->plainTextEdit_statusBar_3->appendPlainText("数据发送失败");
         }
-//            int frameDelayTime = ui->lineEdit_frameDelayTime->text().toInt();
-//            QThread::msleep(static_cast<unsigned long>(frameDelayTime)); // 这里需要延时一下，否则dsp那边芯片接收有问题
-//            QThread::msleep(0);
     }
 }
 

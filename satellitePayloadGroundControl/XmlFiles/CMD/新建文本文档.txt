@@ -1,1 +1,0 @@
-FrameHeader = "B9E0" FrameTail = "" CheckSumLength = "1"

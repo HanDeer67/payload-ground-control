@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!--这是注释 TM行必须严格配置才能正常被软件识别,特别是帧长度
+-->
+<SYSTEM SYSTEMSpecificationT="正X星遥10G激光载荷-慢遥" XMLtypeT="遥测模板">
+	<!--整个数据帧227字节,10字节包头,3字节包尾,214字节纯遥测数据, 项目数正常128个,临时测试109个-->
+	<TM FrameHeader = "0012" FrameTail = "" CheckSumLength = "1" FrameLength = "227"> <!--注意: 这里的帧长227指的是一个完整的遥测帧长度-->
+		<TMitem TMitemNoName="THA001" TMitemSpecificationT="主控软件版本号" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA002" TMitemSpecificationT="主控逻辑版本号" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA003" TMitemSpecificationT="光处理机FPGA版本号" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA004" TMitemSpecificationT="重构数据块校验结果" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA005" TMitemSpecificationT="重构数据整体校验结果" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="正确" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="错误" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA006" TMitemSpecificationT="DSP重构数据包计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面四个参数共用一个字节-->
+		<TMitem TMitemNoName="THA007" TMitemSpecificationT="ATP FPGA重载状态" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="6" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="成功" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="失败" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA008" TMitemSpecificationT="ATP FPGA重构FLASH状态" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="空闲" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+			<Para  ParaSpecificationT="忙碌" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="成功" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA009" TMitemSpecificationT="ATP FPGA重载次数" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA010" TMitemSpecificationT="ATP FPGA自动刷新状态" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="自动刷新" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+			<Para  ParaSpecificationT="已停止自动刷新" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+		<!-- <TMitem TMitemNoName="THA007" TMitemSpecificationT="ATP FPGA重载状态等临时" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<TMitem TMitemNoName="THA011" TMitemSpecificationT="遥测请求计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA012" TMitemSpecificationT="遥控指令计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA013" TMitemSpecificationT="通信错误计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA014" TMitemSpecificationT="PPS秒脉冲计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA015" TMitemSpecificationT="圆光栅5V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0391" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA016" TMitemSpecificationT="ATP其他5V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0835" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA017" TMitemSpecificationT="ATP+12V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA018" TMitemSpecificationT="ATP A+12V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA019" TMitemSpecificationT="ATP A-12V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="-x*0.0918" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA020" TMitemSpecificationT="电机 +15V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA021" TMitemSpecificationT="压电 +90V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.4465" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA022" TMitemSpecificationT="相机+12V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0781" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA023" TMitemSpecificationT="光处理机+12V" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.0851" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA024" TMitemSpecificationT="注入曲线个数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA025" TMitemSpecificationT="方位电流量化值" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*20/256-10" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA026" TMitemSpecificationT="俯仰电流量化值" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*20/256-10" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<TMitem TMitemNoName="THA027" TMitemSpecificationT="捕获开始时间" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA028" TMitemSpecificationT="捕获成功用时" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA029" TMitemSpecificationT="精跟压电-X方向驱动电压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA030" TMitemSpecificationT="精跟压电-Y方向驱动电压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA031" TMitemSpecificationT="精跟压电-COMM端高压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA032" TMitemSpecificationT="超前压电-X方向驱动电压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA033" TMitemSpecificationT="超前压电-Y方向驱动电压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA034" TMitemSpecificationT="超前压电-COMM端高压" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*114.3/4096" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA035" TMitemSpecificationT="跟踪相机通信指令计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA036" TMitemSpecificationT="跟踪相机错误指令计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<TMitem TMitemNoName="THA037" TMitemSpecificationT="相机脱靶量有效标志" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有效" ParaInitCode="NC" ParaRawCodeH="00"></Para>
+			<Para  ParaSpecificationT="无效" ParaInitCode="NC" ParaRawCodeH="11"></Para>
+		</TMitem>
+
+		<TMitem TMitemNoName="THA038" TMitemSpecificationT="相机灰度最大值" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA039" TMitemSpecificationT="相机灰度最小值" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA040" TMitemSpecificationT="相机自适应曝光时间" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA041" TMitemSpecificationT="相机图像灰度数据累加和" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA042" TMitemSpecificationT="相机通信定标点X轴" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA043" TMitemSpecificationT="相机通信定标点Y轴" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA044" TMitemSpecificationT="FPGA焦平面温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1.0/(5.0*Math.log10(2550/x)/15098-20/5663)-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA045" TMitemSpecificationT="机芯温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/10-60" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA046" TMitemSpecificationT="FPGA结温" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/4096/0.00198421639-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA047" TMitemSpecificationT="ATP FPGA温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA048" TMitemSpecificationT="主镜框后侧温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA049" TMitemSpecificationT="次镜支杆温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA050" TMitemSpecificationT="望远镜遮光罩温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA051" TMitemSpecificationT="俯仰散热面温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA052" TMitemSpecificationT="方位散热面温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA053" TMitemSpecificationT="底板内侧温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="1/(Math.log(((6200*x*16)/(4096-x*16))/5013.9)/4100+1/(273.15+25))-273.15" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA054" TMitemSpecificationT="姿态计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA055" TMitemSpecificationT="轨道计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA056" TMitemSpecificationT="太阳矢量计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意:下面2个参数共用一个字节-->
+		<TMitem TMitemNoName="THA057" TMitemSpecificationT="星敏通信指令计数" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA058" TMitemSpecificationT="星敏错误指令计数" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="4" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA057" TMitemSpecificationT="星敏通信指令计数等临时" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+
+
+		<TMitem TMitemNoName="THA059" TMitemSpecificationT="秒时间戳" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA060" TMitemSpecificationT="毫秒时间戳" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA061" TMitemSpecificationT="强光标志" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA062" TMitemSpecificationT="角速度x" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA063" TMitemSpecificationT="角速度y" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA064" TMitemSpecificationT="角速度z" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x/2E30" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面五个参数共用一个字节--> 
+		<TMitem TMitemNoName="THA065" TMitemSpecificationT="工作模式" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="5" BitLength="3" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="待机" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="全天" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="跟踪" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA066" TMitemSpecificationT="姿态有效标志" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="有效" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="无效" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA067" TMitemSpecificationT="抗杂光功能开启标志" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="开启" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="关闭" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA068" TMitemSpecificationT="星点质心提取异常标志" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="异常" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="正常" ParaInitCode="NC" ParaRawCodeH="0"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA069" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA065" TMitemSpecificationT="工作模式等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA070" TMitemSpecificationT="观测星个数" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA071" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA070" TMitemSpecificationT="观测星个数等临时" TMitemByteLengthD="1" BitOffset="0" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA072" TMitemSpecificationT="识别星个数" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA073" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA072" TMitemSpecificationT="识别星个数等临时" TMitemByteLengthD="1" BitOffset="0" BitLength="6" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<!--注意：下面两个参数共用两个字节-->
+		<TMitem TMitemNoName="THA074" TMitemSpecificationT="当前帧处理时间" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="2" BitLength="14" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA075" TMitemSpecificationT="保留" TMitemByteLengthD="2" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA074" TMitemSpecificationT="当前帧处理时间等临时" TMitemByteLengthD="2" BitOffset="0" BitLength="14" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<TMitem TMitemNoName="THA076" TMitemSpecificationT="成像器件温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面三个参数共用两个字节-->
+		<TMitem TMitemNoName="THA077" TMitemSpecificationT="图像灰度均值" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="4" BitLength="12" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA078" TMitemSpecificationT="时间戳有效标志" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA079" TMitemSpecificationT="保留" TMitemByteLengthD="2" ByteInherit = "2" BitOffset="0" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA077" TMitemSpecificationT="图像灰度均值等临时" TMitemByteLengthD="2" BitOffset="0" BitLength="12" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<TMitem TMitemNoName="THA080" TMitemSpecificationT="星敏曝光时间" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA081" TMitemSpecificationT="解锁机构到位" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="解锁前" ParaInitCode="NC" ParaRawCodeH="55"></Para>
+			<Para  ParaSpecificationT="解锁后" ParaInitCode="NC" ParaRawCodeH="AA"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA082" TMitemSpecificationT="光处理机通信指令计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA083" TMitemSpecificationT="光处理机错误指令计数" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA084" TMitemSpecificationT="激光光模块温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA085" TMitemSpecificationT="业务光模块温度" TMitemByteLengthD="1" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA086" TMitemSpecificationT="秒内译码前总bit数" TMitemByteLengthD="5" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA087" TMitemSpecificationT="秒内译码前误bit数" TMitemByteLengthD="5" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA088" TMitemSpecificationT="接收业务帧计数" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA089" TMitemSpecificationT="发送业务帧计数" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA090" TMitemSpecificationT="测距周计数" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA091" TMitemSpecificationT="测距周内秒计数" TMitemByteLengthD="3" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<TMitem TMitemNoName="THA092" TMitemSpecificationT="测距伪距值" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*100/256" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA093" TMitemSpecificationT="测距双向测距值" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*100/256" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA094" TMitemSpecificationT="测距钟差" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*100/256" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面两个参数共用一个字节-->
+		<TMitem TMitemNoName="THA095" TMitemSpecificationT="发送速率"  TMitemByteLengthD="1" ByteInherit = "1" BitOffset="0" BitLength="4" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="625Mbps(OOK)" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="1.25Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="2.5Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+			<Para  ParaSpecificationT="5Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="4"></Para>
+			<Para  ParaSpecificationT="10Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="5"></Para>
+		</TMitem>
+		<TMitem TMitemNoName="THA096" TMitemSpecificationT="接收速率"  TMitemByteLengthD="1" ByteInherit = "2" BitOffset="4" BitLength="4" TMitemType="COMBOX" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote="">
+			<Para  ParaSpecificationT="625Mbps(OOK)" ParaInitCode="NC" ParaRawCodeH="1"></Para>
+			<Para  ParaSpecificationT="1.25Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="2"></Para>
+			<Para  ParaSpecificationT="2.5Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="3"></Para>
+			<Para  ParaSpecificationT="5Gbps(OOK" ParaInitCode="NC" ParaRawCodeH="4"></Para>
+			<Para  ParaSpecificationT="10Gbps(OOK)" ParaInitCode="NC" ParaRawCodeH="5"></Para>
+		</TMitem>
+		<!-- <TMitem TMitemNoName="THA095" TMitemSpecificationT="发送速率等临时" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+
+		
+		<TMitem TMitemNoName="THA097" TMitemSpecificationT="以太网本地MAC" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA098" TMitemSpecificationT="以太网对端MAC" TMitemByteLengthD="6" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA099" TMitemSpecificationT="以太网接收丢弃MAC帧计数" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA100" TMitemSpecificationT="以太网发送丢弃MAC帧计数" TMitemByteLengthD="4" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA101" TMitemSpecificationT="PA_TOSA输出功率" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA102" TMitemSpecificationT="BA_TOSA输出功率" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA103" TMitemSpecificationT="PA_TOSA电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA104" TMitemSpecificationT="PA_TOSA温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA105" TMitemSpecificationT="PA_TOSA背光电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA106" TMitemSpecificationT="PA_TOSATEC电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA107" TMitemSpecificationT="PA泵浦1电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA108" TMitemSpecificationT="PA泵浦1温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA109" TMitemSpecificationT="PA泵浦1背光电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA110" TMitemSpecificationT="PA泵浦1TEC电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA111" TMitemSpecificationT="BA_TOSA电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA112" TMitemSpecificationT="BA_TOSA温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA113" TMitemSpecificationT="BA_TOSA背光电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA114" TMitemSpecificationT="BA_TOSATEC电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA115" TMitemSpecificationT="BA泵浦1电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA116" TMitemSpecificationT="BA泵浦1温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA117" TMitemSpecificationT="BA泵浦1背光电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA118" TMitemSpecificationT="BA泵浦1TEC电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA119" TMitemSpecificationT="BA泵浦2电流" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA120" TMitemSpecificationT="BA泵浦2温度" TMitemByteLengthD="2" ByteInherit = "0" TMitemType="EDIT" TMitemEncodeTypeT="x*0.1" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--注意：下面七个参数共用一个字节-->
+		<TMitem TMitemNoName="THA121" TMitemSpecificationT="PA工作模式" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="7" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA122" TMitemSpecificationT="BA工作模式" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="6" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA123" TMitemSpecificationT="PA模块开关" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="5" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA124" TMitemSpecificationT="BA模块开关" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="4" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA125" TMitemSpecificationT="PA_TOSA开关" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="3" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA126" TMitemSpecificationT="BA_TOSA开关" TMitemByteLengthD="1" ByteInherit = "1" BitOffset="2" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA127" TMitemSpecificationT="保留" TMitemByteLengthD="1" ByteInherit = "2" BitOffset="0" BitLength="2" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA121" TMitemSpecificationT="PA工作模式等临时" TMitemByteLengthD="1" BitOffset="0" BitLength="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+
+		<!--注意：下面三个参数共用两个字节-->	
+		<TMitem TMitemNoName="THA128" TMitemSpecificationT="edfa接收帧计数" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="13" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA129" TMitemSpecificationT="edfa接收误帧计数" TMitemByteLengthD="2" ByteInherit = "1" BitOffset="10" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA130" TMitemSpecificationT="保留" TMitemByteLengthD="2"  ByteInherit = "2" BitOffset="0" BitLength="10" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<!-- <TMitem TMitemNoName="THA128" TMitemSpecificationT="edfa接收帧计数等临时" TMitemByteLengthD="2" BitOffset="0" BitLength="3" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem> -->
+		
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="慢遥遥测请求计数" TMitemByteLengthD="1"  ByteInherit = "0"  TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		
+		<!--<TMitem TMitemNoName="THA130" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA128" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA129" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA130" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA131" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA132" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA133" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA134" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA135" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA136" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA137" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>
+		<TMitem TMitemNoName="THA138" TMitemSpecificationT="备用" TMitemByteLengthD="1" TMitemType="EDIT" TMitemEncodeTypeT="x*1.0/1.0" TMitemMinF="0" TMitemMaxF="255" TMitemNote=""></TMitem>-->
+	</TM>
+
+</SYSTEM>
