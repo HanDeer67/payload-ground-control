@@ -15,6 +15,7 @@ exe/
 *.obj
 *.exe
 *.csv
+*.xlsx
 
 # Logs
 log/
